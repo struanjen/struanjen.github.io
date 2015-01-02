@@ -1,0 +1,188 @@
+nav[role="navigation"].fly-in {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  opacity: 0;
+
+  transition: .5s ease-in-out opacity;
+
+  &#fixed-nav {
+    opacity: 1;
+  }
+
+  header {
+    position: absolute;
+    z-index: 98;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.2 * $base_spacing 0;
+    background-color: $nav_content_bg_color;
+    background-color: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 0 4px $shadow_color_light;
+    border-bottom: solid 1px #d6d6d6;
+    text-align: center;
+  }
+
+  button#menu {
+    position: absolute;
+    top: 0.25em;
+    left: 0.5em;
+    border: none;
+    border-radius: 5em;
+    background: none;
+    text-align: left;
+    padding-top: 0.5em;
+    padding-left: 0.65em;
+    width: 2.5em;
+    height: 2.5em;
+  }
+  button#menu:focus {
+    background-color: rgb(220, 220, 220);
+  }
+  button#menu:hover {
+    background-color: rgb(244, 244, 244);
+  }
+
+  .crest {
+    color: $crest_color;
+    font-size: 160%;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgb(255, 255, 255);
+  }
+  .crest-amp {
+    color: $crest_ampersand;
+    transform: rotate(-14deg);
+    display: inline-block; /* Allow rotate */
+    opacity: 0.99; /* change stacking order so that & goes behind 'S' */
+  }
+
+  ul {
+    margin: 0;
+    padding: 1.2em 0;
+
+    &.menu-content {
+      position: absolute;
+      z-index: 97;
+      width: auto;
+      display: block;
+      top: 2em;
+      text-align: left;
+      background-color: $nav_content_bg_color;
+      background-color: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 0 4px $shadow_color_light, 2px 4px 8px $shadow_color_dark;
+      transform: translate(-100%, 0);
+      transition: .15s ease-in-out transform;
+
+      &.menu-open {
+        transform: translate(0, 0);
+      }
+
+      * + * {
+        margin-top: 0.625em;
+      }
+    }
+  }
+
+  li {
+    display: block;
+  }
+  li:nth-child(last) {
+    margin-right: 0;
+  }
+
+  a {
+    font-size: 150%;
+    display: block;
+    background-color: transparent;
+    color: $text_color;
+    text-decoration: none;
+    padding: 0.25em 1em;
+  }
+  a:hover {
+    text-decoration: none;
+    background-color: $link_color_visited;
+    color: rgb(255, 255, 255);
+  }
+}
+
+
+nav[role="navigation"].sticky {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 0 4px $shadow_color_light;
+  border-bottom: solid 1px #d6d6d6;
+
+  opacity: 0;
+  transition: .5s ease-in-out opacity;
+
+  &#fixed-nav {
+    opacity: 1;
+  }
+
+  header {
+    float: left;
+    position: relative;
+    top: 0.5em;
+    left: 1em;
+    display: inline;
+    width: auto;
+  
+    button {
+      display: none;
+    }
+
+    .crest {
+      color: $crest_color;
+      font-size: 160%;
+      font-weight: bold;
+      text-shadow: 0 1px 1px rgb(255, 255, 255);
+    }
+    .crest-amp {
+      color: $crest_ampersand;
+      transform: rotate(-14deg);
+      display: inline-block; /* Allow rotate */
+      opacity: 0.99; /* change stacking order so that & goes behind 'S' */
+    }
+  }
+
+  ul.menu-content {
+    position: relative;
+    float: right;
+    display: inline-block;
+    margin: 0;
+    padding: 0.625em 0;
+    text-align: right;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: $base_spacing;
+  }
+  li:nth-child(last) {
+    margin-right: 0;
+  }
+
+  a {
+    font-size: 150%;
+    display: block;
+    background-color: transparent;
+    color: $text_color;
+    text-decoration: none;
+    padding: 0 0.625em;
+    border-radius: 0.75em;
+  }
+  a:hover {
+    text-decoration: none;
+    background-color: $link_color_visited;
+    color: rgb(255, 255, 255);
+  }
+}
