@@ -12,7 +12,8 @@ main {
 }
 
 main > section {
-  margin-bottom: $vertical_gutter;
+  padding-top: $vertical_gutter;
+  padding-bottom: $vertical_gutter;
 }
 
 h1, h2 {
@@ -24,6 +25,10 @@ h1, h2 {
 h1 {
   font-size: 450%;
   letter-spacing: -0.02em;
+}
+
+h2 {
+  line-height: 1;
 }
 
 h3 {
@@ -44,7 +49,8 @@ main > section:nth-child(even) {
   background-color: $section_bg_color;
 }
 main > section {
-  padding: 2 * $base_spacing;
+  padding-left: 2 * $base_spacing;
+  padding-right: 2 * $base_spacing;
   > header,
   > .section-content {
     margin: auto;
@@ -89,17 +95,8 @@ main > section {
   color: $accent_color;
   font-size: 300%;
 }
-/* End where, when */
-
-/* Things to do */
-
-/* end things to do */
 
 @media all and (min-width: 56em) {
-  h1 {
-    font-size: 10vw;
-    font-size: 400%;
-  }
 
   header + .intro {
     /*margin-top: 100vh; Only when scroll effect is used*/

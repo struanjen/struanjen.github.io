@@ -46,22 +46,14 @@ section.window-shade:nth-child(2) {
 @media all and (min-width: 56em) {
   section.window-shade {
     background-attachment: fixed;
-/*
-    &.specs {
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-    }
-
-    &:first-of-type {}
-    
-    &:nth-of-type(2) {
-      background-image: url(/images/IMG_0028.jpg);
-    }*/
     
     &:nth-of-type(4) { 
       /*background-image: url(/images/specs.jpg);*/
       background-position: 48% 50%;
+    }
+
+    h1 {
+      font-size: 600%;
     }
   }
 }

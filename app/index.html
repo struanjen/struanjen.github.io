@@ -18,16 +18,16 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- <script src="bower_components/modernizr/modernizr.js"></script> -->
-    <!-- endbuild -->
-
-    <script src="lib/enhance.js"></script>
     <script>
     // Picture element HTML5 shiv
     document.createElement("picture");
     </script>
+    
+    <!-- build:js scripts/vendor.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="lib/enhance.js"></script>
     <script src="lib/picturefill.min.js"></script>
+    <!-- endbuild -->
     
     <script src="//use.typekit.net/ucv8ige.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
@@ -64,16 +64,17 @@
   <!--principal navigation -->
   <nav role="navigation">
     <header>
-      <button type="button" id="menu" title="Menu"><b class="icn hamburger segue"></b></button>
+      <button type="button" id="menu" title="Menu">Menu <b class="icn hamburger segue"></b></button>
       <span class="crest tk-penna">J<b class="crest-amp">&</b>S</span>
     </header>
     <ul class="tk-le-havre menu-content">
-      <li><a href="">Ceremony and Reception</a></li>
-      <li><a href="">Location</a></li>
-      <li><a href="">How to get there</a></li>
-      <li><a href="">Things to do</a></li>
-      <li><a href="">Schedule</a></li>
-      <li><a href="">Registry</a></li>
+      <li><a href="#ceremony-and-reception">Ceremony and Reception</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#how-to-get-there">How to get there</a></li>
+      <li><a href="#where-to-stay">Where to stay</a></li>
+      <li><a href="#things-to-do">Things to do</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#gifts">Gifts</a></li>
     </ul>
   </nav>
 
@@ -101,9 +102,9 @@
   </div>
 
   <main role="main">
-    <section>
+    <section id="ceremony-and-reception">
       <header>
-        <h2 class="section-title">Ceremony & Reception</h2>
+        <h2 class="section-title">Ceremony and Reception</h2>
       </header>
 
       <div class="section-content">
@@ -124,7 +125,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="location">
       <header>
         <h2 class="section-title">Location</h2>
         <p>Aikwood Tower is 4 miles from Selkirk in the Scottish Borders. Built in 1535 as a tower house for a working family it was abandoned in the 18th century. Following renovation in the 1990s it was initially a family home before finding it's principal attraction as a holiday retreat or, of course, a fabulous venue for getting married!</p>
@@ -140,7 +141,7 @@
         </figure> -->
     </section>
       
-    <section>
+    <section id="how-to-get-there">
       <header>
         <h2 class="section-title">How to get there</h2>
       </header>
@@ -177,7 +178,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="gifts">
       <header>
         <h2 class="section-title">Gifts</h2>
       </header>
@@ -193,10 +194,9 @@
       </div>
     </section>
     
-
-    <section>
+    <section id="where-to-stay">
       <header>
-        <h2 class="section-title">Accommodation</h2>
+        <h2 class="section-title">Where to stay</h2>
       </header>
 
       <div class="section-content">
@@ -224,7 +224,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="things-to-do">
       <header>
         <h2 class="section-title">Things To Do</h2>
         <p>Staying for a few days? Here are some ideas of activities and attractions:</p>
@@ -247,8 +247,8 @@
       </div>
     </section>
     
-    <!-- Fourth -->
-    <section id="fourth" class="main">
+    <!-- Contact form -->
+    <!-- <section id="contact-form" class="main">
       <header>
         <div class="container">
           <h2>Sed feugiat ipsum consequat</h2>
@@ -273,18 +273,12 @@
           </div>
         </form>
       </div>
-    </section>
+    </section> -->
   </main>
       
   <!-- Footer -->
   <footer role="contentinfo">
-    <ul class="icons">
-      <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-      <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-      <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-      <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-      <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-    </ul>
+    
   </footer>
 
   <!-- build:js scripts/main2.js -->

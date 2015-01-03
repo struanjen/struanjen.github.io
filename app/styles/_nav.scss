@@ -165,7 +165,7 @@ nav[role="navigation"].sticky {
 
   li {
     display: inline-block;
-    margin-right: $base_spacing;
+    margin-right: 0.625 * $base_spacing;
   }
   li:nth-child(last) {
     margin-right: 0;
