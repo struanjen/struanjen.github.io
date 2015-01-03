@@ -12,20 +12,20 @@ function setupMenuBtn() {
   'use strict';
 
   document.querySelector('#fixed-nav #menu').addEventListener('click', function(e) {
-    //console.log('clicked on menu');
 
-    var menuContent = document.querySelector('.menu-content'),
-      targetClass = e.target.classList;
+    var menuContentClass = document.querySelector('.menu-content').classList,
+      targetClass = document.querySelector('.js-menu-icn').classList,
+      action1 = 'add',
+      action2 = 'remove';
 
-    if ( menuContent.classList.contains('menu-open') ) {
-      menuContent.classList.remove('menu-open');
-      targetClass.add('hamburger');
-      targetClass.remove('cross');
-    } else {
-      menuContent.classList.add('menu-open');
-      targetClass.remove('hamburger');
-      targetClass.add('cross');
+    if ( menuContentClass.contains('menu-open') ) {
+      action1 = 'remove',
+      action2 = 'add';
     }
+
+    menuContentClass[action1]('menu-open');
+    targetClass[action1]('cross');
+    targetClass[action2]('hamburger');
   });
 }
 

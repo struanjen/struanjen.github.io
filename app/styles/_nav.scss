@@ -33,13 +33,14 @@ nav[role="navigation"].fly-in {
     top: 0.25em;
     left: 0.5em;
     border: none;
-    border-radius: 5em;
+    /*border-radius: 5em;*/
     background: none;
     text-align: left;
     padding-top: 0.5em;
     padding-left: 0.65em;
-    width: 2.5em;
-    height: 2.5em;
+    padding-right: 0.65em;
+    /*width: 2.5em;
+    height: 2.5em;*/
   }
   button#menu:focus {
     background-color: rgb(220, 220, 220);
