@@ -1,0 +1,14 @@
+@keyframes animatebackground {
+  0% { background-position: 20% 50%; }
+  33% { background-position: 20% 50%; }
+  66%  { background-position: 82% 50%; }
+  100%  { background-position: 82% 50%; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes animatebackground {
+  0% { background-position: 20% 50%; }
+  33% { background-position: 20% 50%; }
+  66%  { background-position: 82% 50%; }
+  100%  { background-position: 82% 50%; }
+}

@@ -3,9 +3,12 @@ var WDNG = WDNG || {};
 
 document.addEventListener('scroll', function() {
   'use strict';
+  
+  var scrollQ = WDNG.app.getScrollQ();
 
-  WDNG.navbar.navPosition();
-  //WDNG.intro.resize();
+  for (var i = 0; i < scrollQ.length; i += 1) {
+    scrollQ[i]();
+  }
 });
 
 function setupMenuBtn() {
@@ -29,16 +32,58 @@ function setupMenuBtn() {
   });
 }
 
-WDNG.app = (function () {
+WDNG.app = (function() {
 
   'use strict';
+
+  var scrollQ = [];
+
+  /*function createItem(item, options) {
+    var newItem = {
+      fn: item,
+      fnAfter: function() {}
+    };
+
+    for (var key in options) {
+      if ( options.hasOwnProperty(key) ) {
+        newItem[key] = options[key];
+      }
+    }
+
+    return newItem;
+  }*/
+
+  function addToScrollQ(item) {
+    //scrollQ.push( createItem(item, options) );
+    scrollQ.push(item);
+  }
+
+  function removeFromScrollQ(item) {
+    var index = scrollQ.indexOf(item);
+    scrollQ.splice(index, 1);
+  }
+
+  function getScrollQ() {
+    return scrollQ;
+  }
+
+  function invoker(fn, check, condition) {
+    return function() {
+      if ( check(condition) ) {
+        fn();
+      }
+    }
+  }
   
   return {
-
+    addToScrollQ: addToScrollQ,
+    removeFromScrollQ: removeFromScrollQ,
+    getScrollQ: getScrollQ,
+    invoker: invoker
   };
 }());
 
-WDNG.util = (function () {
+WDNG.util = (function() {
   
   'use strict';
 
@@ -48,21 +93,16 @@ WDNG.util = (function () {
 
   function getOffset(el) {
     var curLeft, curTop;
-
-    var winHeight = window.innerHeight;
     
     curLeft = curTop = 0;
 
     if (el && el.offsetParent) {
       do {
-        //console.log('offsetParent');
-        //console.log('el.offsetTop ' + el.offsetTop + ', el.scrollTop ' + el.scrollTop);
-        //curLeft += el.offsetLeft - el.scrollLeft;
         curTop += el.offsetTop - el.scrollTop;
       } while (el = el.offsetParent);
     }
 
-    return {top: curTop, left: curLeft, winHeight: winHeight};
+    return {top: curTop, left: curLeft};
   }
 
   return {
@@ -71,7 +111,7 @@ WDNG.util = (function () {
   };
 }());
 
-WDNG.intro = (function () {
+WDNG.intro = (function() {
 
   'use strict';
 
@@ -80,7 +120,7 @@ WDNG.intro = (function () {
   
   var selector = 'header[role="banner"]';
 
-  function resize () {
+  function resize() {
     var el = WDNG.util.domEl(selector);
     
     if (!el) {
@@ -123,14 +163,14 @@ WDNG.intro = (function () {
   };
 }());
 
-WDNG.navbar = (function () {
+WDNG.navbar = (function() {
 
   'use strict';
 
   var selector = 'nav[role="navigation"]';
   var trigger = 'main[role="main"]';
 
-  function navTop () {
+  function navPosition() {
     var el = WDNG.util.domEl(selector);
     var triggerEl = WDNG.util.domEl(trigger);
     var offset = WDNG.util.getOffset(triggerEl);
@@ -154,39 +194,46 @@ WDNG.navbar = (function () {
     }
   }
 
-  /*function navBottom() {
-    var el = WDNG.util.domEl(selector);
-    var offset = WDNG.util.getOffset(el);
-    var navFixed = false;
-
-    //console.log('el offset top:', offset);
-
-    if (offset.top <= offset.winHeight) {
-      if (!navFixed) {
-        el.style.position = 'fixed';
-        navFixed = true;
-      }
-    } else if (navFixed) {
-      el.style.position = 'relative';
-      navFixed = false;
-    }
-  }*/
-
-  var navPosition = function navPosition() {};
-
   return {
-    navTop: navTop,
-    //navBottom: navBottom,
     navPosition: navPosition
   };
 }());
 
-
-  WDNG.navbar.navPosition = WDNG.navbar.navTop;
-
 if ( window.matchMedia('(min-width: 56em)').matches ) {
-  //console.log('Min medium screen...');
   document.querySelector('nav[role="navigation"]').classList.add('sticky');
 } else {
+  // Enable fly in menu styles and behaviour
   document.querySelector('nav[role="navigation"]').classList.add('fly-in');
+
+  // Enable small screen version of 'specs' section
+  (function() {
+    var el = document.querySelector('.js-see-you-there');
+    
+    WDNG.seeYouThere = function seeYouThere() {
+      console.log('Todo: avoid adding this more than once!');
+      el.classList.add('animate-background');
+    };
+
+    // Add listener condition to scroll queue
+    // listen for el reaching position on page
+    // test = WDNG.util.getOffset(el)
+    // condition = function() {}
+    
+    var check = function(condition) {
+      var offset = WDNG.util.getOffset(el);
+      return offset.top < condition();
+    };
+
+    var condition = function() {
+      return 50;
+    };
+
+    var fnAfter = WDNG.app.removeFromScrollQ;
+    
+    WDNG.app.addToScrollQ( WDNG.app.invoker(WDNG.seeYouThere, check, condition) );
+  }());
 }
+
+
+WDNG.app.addToScrollQ(WDNG.navbar.navPosition);
+//WDNG.intro.resize();

@@ -31,11 +31,24 @@ section.window-shade {
   &:nth-of-type(4) { 
     background-image: url(../images/specs.jpg);
     background-position: 20% 50%;
+    /*background:
+      url(../images/specs.jpg) 20% 50% no-repeat,
+      url(../images/specs.jpg) 80% 50% no-repeat;*/
   }
 
   &.light-foreground-text {
     color: #fff;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+  }
+
+  &.animate-background {
+    animation-name: animatebackground;
+    animation-duration: 2.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 8;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+    animation-direction: alternate;
   }
 }
 

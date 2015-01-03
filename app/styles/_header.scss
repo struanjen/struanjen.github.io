@@ -21,7 +21,7 @@ header[role="banner"] {
   h1 {
     position: absolute;
     width: 100%;
-    bottom: 70px;
+    bottom: 50px;
     top: auto;
     z-index: 10;
     font-size: 5em;
@@ -31,20 +31,6 @@ header[role="banner"] {
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
     opacity: 0;
     line-height: 1;
-
-    -webkit-animation-name: fadein;
-    -webkit-animation-duration: 2.2s;
-    -webkit-animation-timing-function: ease-out;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-delay: 1s;
-    -webkit-animation-fill-mode: forwards;
-
-    -moz-animation-name: fadein;
-    -moz-animation-duration: 2.2s;
-    -moz-animation-timing-function: ease-out;
-    -moz-animation-iteration-count: 1;
-    -moz-animation-delay: 1s;
-    -moz-animation-fill-mode: forwards;
 
     animation-name: fadein;
     animation-duration: 2.2s;
