@@ -32,6 +32,10 @@ function setupMenuBtn() {
     menuContentClass[action1]('menu-open');
     targetClass[action1]('cross');
     targetClass[action2]('hamburger');
+
+    if (action1 === 'add') {
+      menuContentEl.focus();
+    }
   });
 
   // Listen for click event bubbling up to menu content ul
@@ -135,7 +139,7 @@ WDNG.intro = (function() {
       return;
     }
 
-    el.style.overflow = 'visible';
+    //el.style.overflow = 'visible';
 
     var offset = WDNG.util.getOffset(el);
     var initialScale = 1.35;
@@ -162,7 +166,6 @@ WDNG.intro = (function() {
     console.log('translateY = ' + translateY);*/
     var newTransform = 'translate3d(-50%, ' + translateY + 'px, 0) scale(' + scale + ')';
     image.style.webkitTransform = newTransform;
-    image.style.mozTransform = newTransform;
     image.style.transform = newTransform;
   }
   
@@ -215,7 +218,11 @@ if ( window.matchMedia('(min-width: 56em)').matches ) {
 
   // Enable small screen version of 'specs' section
   (function() {
-    var el = document.querySelector('.js-see-you-there');
+    var section = document.querySelector('section.specs'),
+      el = document.createElement('div');
+
+      el.id = 'js-see-you-there';
+      section.appendChild(el);
     
     // Todo: Don't apply to small screen landscape
     
@@ -238,12 +245,36 @@ if ( window.matchMedia('(min-width: 56em)').matches ) {
       return 50;
     };
 
-    var fnAfter = WDNG.app.removeFromScrollQ;
+    //var fnAfter = WDNG.app.removeFromScrollQ;
     
     WDNG.app.addToScrollQ( WDNG.app.invoker(WDNG.seeYouThere, check, condition) );
   }());
 }
 
-
 WDNG.app.addToScrollQ(WDNG.navbar.navPosition);
-//WDNG.intro.resize();
+
+// Test for scroll effect
+// Large screen i.e. > 1024 (1024/16 = 64)
+// Supports offset top on scroll
+if ( window.matchMedia('(min-width: 65em)').matches ) {
+  console.log('Large screen');
+
+  // test for support
+  var el = document.querySelector('main'),
+    initialOffsetTop = WDNG.util.getOffset(el).top,
+    updatedOffsetTop;
+
+  // Test by scrolling page by one pixel
+  window.scrollBy(0, 1);
+
+  updatedOffsetTop = WDNG.util.getOffset(el).top;
+
+  if (initialOffsetTop - updatedOffsetTop === 1) {
+    console.log('resize on scroll supported');
+    document.documentElement.classList.add('resize-on-scroll');
+    WDNG.app.addToScrollQ(WDNG.intro.resize);
+  }
+
+  // Reset page position after test
+  window.scrollBy(0, -1);
+}

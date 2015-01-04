@@ -95,10 +95,3 @@ main > section {
   color: $accent_color;
   font-size: 300%;
 }
-
-@media all and (min-width: 56em) {
-
-  header + .intro {
-    /*margin-top: 100vh; Only when scroll effect is used*/
-  }
-}

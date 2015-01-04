@@ -184,6 +184,7 @@ nav[role="navigation"].sticky {
   }
 }
 
+/* Help show menu in full in landscape */
 @media all and (orientation: landscape) {
   nav[role="navigation"].fly-in {
   a {

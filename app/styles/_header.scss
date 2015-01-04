@@ -1,18 +1,24 @@
 /**********************
  header
 **********************/
+.resize-on-scroll {
+  header[role="banner"] {
+    overflow: visible;
+  }
+
+  .intro {
+    margin-top: 130vh; /*Only when scroll effect is used*/
+  }
+}
+
 header[role="banner"] {
   overflow: hidden; /* Needs to be visible on scroll, if scroll effect is supported */
-  /*overflow: visible;*/
-  position: relative; /* disable for browsers supporting scroll zoom effect */
-  /*max-width: 1024px;*/
+  position: relative;
   min-height: 100vh;
   max-height: 100vh;
   height: 100vh;
   
   margin: 0;
-  /*background: url(../images/header.jpg) #fff center center no-repeat;
-  background-size: cover;*/
   padding: 0;
   text-align: center;
 
