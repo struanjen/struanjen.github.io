@@ -4,19 +4,22 @@ var WDNG = WDNG || {};
 document.addEventListener('scroll', function() {
   'use strict';
   
-  var scrollQ = WDNG.app.getScrollQ();
+  var scrollEventQ = WDNG.app.getScrollQ();
 
-  for (var i = 0; i < scrollQ.length; i += 1) {
-    scrollQ[i]();
+  for (var i = 0; i < scrollEventQ.length; i += 1) {
+    scrollEventQ[i]();
   }
 });
 
 function setupMenuBtn() {
   'use strict';
 
-  document.querySelector('#fixed-nav #menu').addEventListener('click', function(e) {
+  var menuBtnEl = document.querySelector('#fixed-nav #menu'),
+    menuContentEl = document.querySelector('.menu-content');
 
-    var menuContentClass = document.querySelector('.menu-content').classList,
+  // Listen for click event on main nav menu button
+  menuBtnEl.addEventListener('click', function(e) {
+    var menuContentClass = menuContentEl.classList,
       targetClass = document.querySelector('.js-menu-icn').classList,
       action1 = 'add',
       action2 = 'remove';
@@ -29,6 +32,11 @@ function setupMenuBtn() {
     menuContentClass[action1]('menu-open');
     targetClass[action1]('cross');
     targetClass[action2]('hamburger');
+  });
+
+  // Listen for click event bubbling up to menu content ul
+  menuContentEl.addEventListener('click', function() {
+    menuBtnEl.click();
   });
 }
 
@@ -208,6 +216,8 @@ if ( window.matchMedia('(min-width: 56em)').matches ) {
   // Enable small screen version of 'specs' section
   (function() {
     var el = document.querySelector('.js-see-you-there');
+    
+    // Todo: Don't apply to small screen landscape
     
     WDNG.seeYouThere = function seeYouThere() {
       console.log('Todo: avoid adding this more than once!');
