@@ -7,7 +7,7 @@
   }
 
   .intro {
-    margin-top: 130vh; /*Only when scroll effect is used*/
+    margin-top: 130vh; /* Only when scroll effect is used*/
   }
 }
 
@@ -30,8 +30,7 @@ header[role="banner"] {
     bottom: 60px;
     top: auto;
     z-index: 10;
-    font-size: 5em;
-    font-size: 14vh;
+    font-size: 6em;
     margin: auto;
     color: $title_text_color;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
@@ -63,7 +62,7 @@ header[role="banner"] {
 }
 
 @media all and (orientation: portrait) {
-  em {
+  h1 > em {
     display: block;
   }
 }

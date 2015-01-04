@@ -1,0 +1,42 @@
+/** 
+ * iPad with portrait orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
+  header[role="banner"],
+  section.window-shade {
+    height: 1024px;
+  }
+  header[role="banner"] {
+    min-height: 1024px;
+    max-height: 1024px;
+  }
+}
+ 
+/** 
+ * iPad with landscape orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
+  header[role="banner"],
+  section.window-shade {
+    height: 768px;
+  }
+  header[role="banner"] {
+    min-height: 768px;
+    max-height: 768px;
+  }
+}
+ 
+/**
+ * iPhone 5
+ * You can also target devices with aspect ratio.
+ */
+@media screen and (device-aspect-ratio: 40/71) {
+  header[role="banner"],
+  section.window-shade {
+    height: 500px;
+  }
+  header[role="banner"] {
+    min-height: 500px;
+    max-height: 500px;
+  }
+}
