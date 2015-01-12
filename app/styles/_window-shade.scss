@@ -36,9 +36,6 @@ section.window-shade {
     position: relative;
     background-image: url(../images/specs.jpg);
     background-position: 20% 50%;
-    /*background:
-      url(../images/specs.jpg) 20% 50% no-repeat,
-      url(../images/specs.jpg) 80% 50% no-repeat;*/
   }
 
   &.light-foreground-text {
@@ -77,8 +74,8 @@ section.window-shade:nth-child(2) {
     background-attachment: fixed;
     
     &:nth-of-type(4) {
+      position: initial;
       background-position: 48% 50%;
-      background-image: url(../images/specs.jpg);
     }
 
     h1 {

@@ -1,97 +1,64 @@
-body {
-  background-color: rgb(255, 255, 255);
-  color: $text_color;
-  font-family: Georgia, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
-}
-
-main {
-  width: 100%;
-  /*max-width: 960px;*/
-  margin: 0 auto;
-}
-
-main > section {
-  padding-top: $vertical_gutter;
-  padding-bottom: $vertical_gutter;
-}
-
-h1, h2 {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-}
-
-h1 {
-  font-size: 450%;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  line-height: 1;
-}
-
-h3 {
-  font-size: 120%;
-  line-height: 1;
-}
-
-time {
-  color: $accent_color_light;
-  display: block;
-  font-weight: bold;
-}
-
 /**********************
  where, when
 **********************/
-main > section:nth-child(even) {
-  background-color: $section_bg_color;
-}
-main > section {
-  padding-left: 2 * $base_spacing;
-  padding-right: 2 * $base_spacing;
-  > header,
-  > .section-content {
-    margin: auto;
-    max-width: 960px;  
+main {
+  width: 100%;
+  margin: 0 auto;
+
+  > section:nth-child(even) {
+    background-color: $section_bg_color;
   }
 
-  p {
-    margin-bottom: 0;
-    font-size: 120%;
-    line-height: 1.6;
-  }
+  > section {
+    padding-top: $vertical_gutter;
+    padding-bottom: $vertical_gutter;
+    padding-left: 2 * $base_spacing;
+    padding-right: 2 * $base_spacing;
+    > header,
+    > .section-content {
+      margin: auto;
+      max-width: 900px;  
+    }
 
-  > div > * + h3 {
-    margin-top: 3 * $base_spacing;
-  }
-  
-  header > p {
-    margin: 0;
-    padding: 0;
-  }
+    .section-title {
+      color: $accent_color;
+      font-size: 300%;
+    }
+    
+    header > p {
+      margin: 0;
+      padding: 0;
+    }
 
-  ul {
-   list-style-type: circle;
-   font-size: 120%;
-  }
+    p {
+      margin-bottom: 0;
+    }
 
-  a {
-    color: $link_color;
-  }
-  a:visited {
-    color: $link_color_visited;
-  }
-  a:focus {
-    color: $link_color_focus;
-  }
-  a:hover {
-    color: $link_color_hover;
-  }
-}
+    > div > * + h3 {
+      margin-top: 3 * $base_spacing;
+    }
 
-.section-title {
-  color: $accent_color;
-  font-size: 300%;
+    ul {
+     list-style-type: circle;
+    }
+
+    p,
+    ul {
+      font-size: 120%;
+      line-height: 1.6;
+    }
+
+    a {
+      color: $link_color;
+    }
+    a:visited {
+      color: $link_color_visited;
+    }
+    a:focus {
+      color: $link_color_focus;
+    }
+    a:hover {
+      color: $link_color_hover;
+    }
+  }
 }
