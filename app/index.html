@@ -63,7 +63,8 @@
               images/jsmountains-xs.jpg 320w"
       sizes="(min-width: 56em) 200vw, 100vw"
       src="images/jsmountains-xs.jpg"
-      alt="Jen and Struan are getting married"/>
+      alt="Jen and Struan are getting married"
+      id="banner-image"/>
   </header>
 
   <!--principal navigation -->
@@ -238,7 +239,7 @@
         <ul>
           <li>Golf</li>
           <li>Glentress for walks and mountain biking</li>
-          <li>Walks; Three Brethern, Eildon Hills</li>
+          <li>Walks: Three Brethern, Eildon Hills</li>
           <li>Abbotsford House, the home of author Sir Walter Scott</li>
           <li>Scott's View, the author's favourite place</li>
           <li>Melrose Abbey, where Robert the Bruce's heart is believed to be buried</li>
@@ -251,6 +252,10 @@
         </ul>
       </div>
     </section>
+
+    @@include('./content/compiled/intro.html')
+    @@include('./content/compiled/things-to-do.html')
+
   </main>
       
   <!-- Footer -->
@@ -261,12 +266,13 @@
   <script>
     window.WDNG = {};
   </script>
-  <!-- build:js scripts/main2.js -->
+  <!-- build:js scripts/main.js -->
   <script src="scripts/util.js"></script>
   <script src="scripts/scrollQ.js"></script>
   <script src="scripts/intro.js"></script>
   <script src="scripts/navbar.js"></script>
   <script src="scripts/main.js"></script>
+  <script src="scripts/onload.js"></script>
   <!-- endbuild -->
 </body>
 </html>

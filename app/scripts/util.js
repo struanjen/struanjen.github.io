@@ -1,3 +1,4 @@
+/* global WDNG */
 WDNG.util = (function() {
   
   'use strict';
@@ -20,8 +21,15 @@ WDNG.util = (function() {
     return {top: curTop, left: curLeft};
   }
 
+  function loadImage(path, callback) {
+    var img = new Image();
+    img.onload = callback();
+    img.src = path;
+  }
+
   return {
     domEl: domEl,
-    getOffset: getOffset
+    getOffset: getOffset,
+    loadImage: loadImage
   };
 }());

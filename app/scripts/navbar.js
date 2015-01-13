@@ -1,3 +1,4 @@
+/* global WDNG */
 WDNG.navbar = (function() {
 
   'use strict';

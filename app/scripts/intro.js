@@ -1,3 +1,4 @@
+/* global WDNG */
 WDNG = WDNG || {};
 
 WDNG.intro = (function() {
@@ -32,7 +33,7 @@ WDNG.intro = (function() {
     var scaleFactor = (c*p)/(h*i);
     var scale = initialScale - scaleFactor;
     var translateY = initialTranslateY + 1700 * scaleFactor;
-    var thresholdY = 245;
+    var thresholdY = 245; // calc = 
     translateY = translateY > thresholdY ? thresholdY : translateY;
     //translateY = -50;
     //var posTop = -50 + 100 * scaleFactor;

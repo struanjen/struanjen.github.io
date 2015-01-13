@@ -1,3 +1,4 @@
+/* global WDNG */
 WDNG = WDNG || {};
 
 document.addEventListener('scroll', function() {
@@ -18,6 +19,7 @@ if ( window.matchMedia('(min-width: 56em)').matches ) {
 
   // Enable small screen version of 'specs' section
   (function() {
+    'use strict';
     var section = document.querySelector('section.specs'),
       el = document.createElement('div');
 

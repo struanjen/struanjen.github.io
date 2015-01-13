@@ -1,3 +1,4 @@
+/* global WDNG */
 WDNG.scrollQ = (function() {
 
   'use strict';
@@ -38,7 +39,7 @@ WDNG.scrollQ = (function() {
       if ( check(condition) ) {
         fn();
       }
-    }
+    };
   }
   
   return {
