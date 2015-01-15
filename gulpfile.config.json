@@ -1,0 +1,22 @@
+{
+  "dev": {
+    "lint": false,
+    "minify": false,
+    "target": "dev",
+    "root": "app",
+    "port": 9000,
+    "livereload": true,
+    "sourcemap": false
+  },
+
+  "dist": {
+    "lint": true,
+    "minify": true,
+    "target": "dist",
+    "root": "release",
+    "port": 9001,
+    "livereload": false,
+    "sourcemap": true,
+    "htmlInject": ["./release/r*/scripts/**/*.js", "./release/r*/styles/**/*.css"]
+  }
+}

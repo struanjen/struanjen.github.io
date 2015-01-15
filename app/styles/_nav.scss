@@ -33,7 +33,6 @@ nav[role="navigation"].fly-in {
     top: 0.25em;
     left: 0.5em;
     border: none;
-    /*border-radius: 5em;*/
     background: none;
     text-align: left;
     padding-top: 0.5em;
@@ -69,8 +68,11 @@ nav[role="navigation"].fly-in {
     &.menu-content {
       position: absolute;
       z-index: 97;
-      width: auto;
+      max-width: 100%;
       display: block;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
       top: 2em;
       text-align: left;
       background-color: $nav_content_bg_color;
@@ -86,7 +88,12 @@ nav[role="navigation"].fly-in {
   }
 
   li {
-    display: block;
+    display: inline-block;
+    flex: 0 0 45%;
+    margin-top: 1em;
+    padding: 0;
+    outline: solid 1px #ccc;
+    text-align: center;
   }
   li:nth-child(last) {
     margin-right: 0;

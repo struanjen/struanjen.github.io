@@ -1,4 +1,4 @@
-op0-/* global WDNG, console */
+/* global WDNG, console */
 WDNG.onload = (function() {
 
   'use strict';
@@ -17,7 +17,7 @@ WDNG.onload = (function() {
     this.style.transform = transformCss;
   };
 
-  var introImageEl = document.getElementById('banner-image');
-  introImageEl.onload = introImage.bind(introImageEl);
+  //var introImageEl = document.getElementById('banner-image');
+  //introImageEl.onload = introImage.bind(introImageEl);
 
 }());

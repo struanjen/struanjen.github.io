@@ -16,7 +16,7 @@ WDNG.navbar = (function() {
     //clone.id = fixedNavClassName;
     // append clone and set 'fixed' position
     //console.log('el offset top:', offset);
-    if (offset.top < 10) {
+    if (offset.top < 80) {
       if (fixedNav === null) {
         //document.body.appendChild(clone);
         //el.style.visibility = 'hidden';

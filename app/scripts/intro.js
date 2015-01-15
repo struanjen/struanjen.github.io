@@ -6,7 +6,7 @@ WDNG.intro = (function() {
   'use strict';
 
   // Track distance of header from top of page
-  // resize from ? to ?
+  // resize from ? to ??
   
   var selector = 'header[role="banner"]';
   var el = WDNG.util.domEl(selector);

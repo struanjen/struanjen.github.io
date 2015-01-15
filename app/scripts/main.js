@@ -72,7 +72,7 @@ if ( window.matchMedia('(min-width: 65em)').matches ) {
   updatedOffsetTop = WDNG.util.getOffset(el).top;
 
   if (initialOffsetTop - updatedOffsetTop === 1) {
-    console.log('resize on scroll supported');
+    //console.log('resize on scroll supported');
     document.documentElement.classList.add('resize-on-scroll');
     WDNG.scrollQ.addToScrollQ(WDNG.intro.resize);
   }
