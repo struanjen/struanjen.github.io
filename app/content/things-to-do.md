@@ -1,6 +1,9 @@
 <section id="things-to-do">
   <header>
     <h2 class="section-title">Things To Do</h2>
+    <figure class="avatar">
+      <img src="images/content-melrose-abbey.jpg" width="140" height="140" alt=""/>
+    </figure>
     <p>Staying for a few days? Here are some ideas of activities and attractions:</p>
   </header>
   <div class="section-content">

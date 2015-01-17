@@ -1,0 +1,11 @@
+.avatar {
+  transform: rotate(-45deg);
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  border: solid 1px $link_color;
+  width: 142px;
+
+  img {
+    transform: rotate(45deg) scale(1.5);
+  }
+}

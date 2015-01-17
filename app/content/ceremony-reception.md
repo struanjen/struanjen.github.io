@@ -1,6 +1,9 @@
 <section id="ceremony-and-reception">
   <header>
     <h2 class="section-title">Ceremony and Reception</h2>
+    <figure class="avatar">
+      <img src="images/content-aikwood-door.jpg" width="140" height="140" alt=""/>
+    </figure>
   </header>
 
   <div class="section-content">

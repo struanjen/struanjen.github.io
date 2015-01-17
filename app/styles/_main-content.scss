@@ -14,10 +14,16 @@ main {
     padding-bottom: $vertical_gutter;
     padding-left: 2 * $base_spacing;
     padding-right: 2 * $base_spacing;
-    > header,
-    > .section-content {
+
+    header,
+    .section-content {
       margin: auto;
       max-width: 900px;  
+    }
+
+    header .avatar {
+      float: right;
+      margin-top: -1em;
     }
 
     .section-title {

@@ -1,6 +1,9 @@
 <section id="where-to-stay">
   <header>
     <h2 class="section-title">Where to stay</h2>
+    <figure class="avatar">
+      <img src="images/content-eildons.jpg" width="140" height="140" alt=""/>
+    </figure>
   </header>
 
   <div class="section-content">
