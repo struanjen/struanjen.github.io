@@ -58,7 +58,7 @@
     <!--principal navigation -->
     <nav role="navigation">
       <header>
-        <button type="button" id="menu" title="Menu"><!-- Menu --> <b class="js-menu-icn icn hamburger segue"></b></button>
+        <button type="button" id="menu">Menu<!-- <b class="js-menu-icn icn hamburger segue"></b> --></button>
         <span class="crest tk-penna">J<b class="crest-amp">&amp;</b>S</span>
       </header>
       <ul class="tk-le-havre menu-content" tabindex="0">
@@ -77,13 +77,9 @@
   <section class="welcome">
     <div class="picture-frame">
       <h1 class="tk-penna">Jennifer  <em>&amp;</em> Struan</h1>
-      <!-- <img
-        src="images/jsmountains-2048.jpg"
-        alt="Jen and Struan are getting married"
-        id="welcome-image"/> -->
         <picture>
-          <source media="(min-width: 56em)" srcset="images/jsmountains-2048.jpg">
-          <!-- <source media="(min-width: 48em)" srcset="images/jsmountains-2048.jpg"> -->
+          <!-- <source media="(min-width: 56em)" srcset="images/jsmountains-2048.jpg"> -->
+          <source media="(min-width: 33em)" srcset="images/jsmountains-2048.jpg">
           <source media="(max-width: 32em)" srcset="images/js-lean-640.jpg">
           <source media="(max-width: 20em)" srcset="images/js-lean-320.jpg">
           <img src="images/js-lean-640.jpg" alt="Jen and Struan are getting married">
@@ -143,7 +139,6 @@
   <!-- build:js scripts/main.js -->
   <script src="scripts/util.js"></script>
   <script src="scripts/scrollQ.js"></script>
-  <script src="scripts/intro.js"></script>
   <script src="scripts/navbar.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/onload.js"></script>
