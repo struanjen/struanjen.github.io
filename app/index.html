@@ -55,34 +55,41 @@
 
   <!-- Header -->
   <header role="banner">
-    <h1 class="tk-penna">Jennifer  <em>&amp;</em> Struan</h1>
-    <img
-      srcset="images/jsmountains-xl.jpg 2048w,
-              images/jsmountains-xl.jpg 1024w,
-              images/jsmountains-s.jpg 640w,
-              images/jsmountains-xs.jpg 320w"
-      sizes="(min-width: 56em) 200vw, 100vw"
-      src="images/jsmountains-xs.jpg"
-      alt="Jen and Struan are getting married"
-      id="banner-image"/>
+    <!--principal navigation -->
+    <nav role="navigation">
+      <header>
+        <button type="button" id="menu" title="Menu"><!-- Menu --> <b class="js-menu-icn icn hamburger segue"></b></button>
+        <span class="crest tk-penna">J<b class="crest-amp">&amp;</b>S</span>
+      </header>
+      <ul class="tk-le-havre menu-content" tabindex="0">
+        <li><a href="#ceremony-and-reception">Ceremony and Reception</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#how-to-get-there">How to get there</a></li>
+        <li><a href="#where-to-stay">Where to stay</a></li>
+        <li><a href="#things-to-do">Things to do</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#gifts">Gifts</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!--principal navigation -->
-  <nav role="navigation">
-    <header>
-      <button type="button" id="menu" title="Menu"><!-- Menu --> <b class="js-menu-icn icn hamburger segue"></b></button>
-      <span class="crest tk-penna">J<b class="crest-amp">&</b>S</span>
-    </header>
-    <ul class="tk-le-havre menu-content" tabindex="0">
-      <li><a href="#ceremony-and-reception">Ceremony and Reception</a></li>
-      <li><a href="#location">Location</a></li>
-      <li><a href="#how-to-get-there">How to get there</a></li>
-      <li><a href="#where-to-stay">Where to stay</a></li>
-      <li><a href="#things-to-do">Things to do</a></li>
-      <li><a href="#schedule">Schedule</a></li>
-      <li><a href="#gifts">Gifts</a></li>
-    </ul>
-  </nav>
+  <!-- welcome -->
+  <section class="welcome">
+    <div class="picture-frame">
+      <h1 class="tk-penna">Jennifer  <em>&amp;</em> Struan</h1>
+      <!-- <img
+        src="images/jsmountains-2048.jpg"
+        alt="Jen and Struan are getting married"
+        id="welcome-image"/> -->
+        <picture>
+          <source media="(min-width: 56em)" srcset="images/jsmountains-2048.jpg">
+          <!-- <source media="(min-width: 48em)" srcset="images/jsmountains-2048.jpg"> -->
+          <source media="(max-width: 32em)" srcset="images/js-lean-640.jpg">
+          <source media="(max-width: 20em)" srcset="images/js-lean-320.jpg">
+          <img src="images/js-lean-640.jpg" alt="Jen and Struan are getting married">
+        </picture>
+    </div>
+  </section>
 
   <!-- what, when, where -->
   <div class="intro">
@@ -139,8 +146,11 @@
     <figure class="avatar">
       <img src="images/content-aikwood-tower.jpg" width="140" height="140" alt=""/>
     </figure>
-    <p>Aikwood Tower is 4 miles from Selkirk in the Scottish Borders. Built in 1535 as a tower house for a working family it was abandoned in the 18th century. Following renovation in the 1990s it was initially a family home before finding it&#39;s principal attraction as a holiday retreat or, of course, a fabulous venue for getting married!</p>
   </header>
+
+  <div class="section-content">
+    <p>Aikwood Tower is 4 miles from Selkirk in the Scottish Borders. Built in 1535 as a tower house for a working family it was abandoned in the 18th century. Following renovation in the 1990s it was initially a family home before finding it&#39;s principal attraction as a holiday retreat or, of course, a fabulous venue for getting married!</p>
+  </div>
 </section>
     <section id="how-to-get-there">
   <header>
@@ -255,9 +265,9 @@
       <header>
         <h2 class="section-title">Contact / RSVP</h2>
       </header>
-      <div class="section-content">
+      <!-- <div class="section-content">
         <iframe height="525" allowTransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none"  src="https://kingsthings.wufoo.com/embed/z8mqe2l0hvrfoc/"><a href="https://kingsthings.wufoo.com/forms/z8mqe2l0hvrfoc/">Fill out my Wufoo form!</a></iframe>
-      </div>
+      </div> -->
     </section>
   </main>
       

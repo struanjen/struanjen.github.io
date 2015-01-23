@@ -2,8 +2,10 @@
   transform: rotate(-45deg);
   transform-origin: 50% 50%;
   overflow: hidden;
-  border: solid 1px $link_color;
   width: 142px;
+  margin: 0;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgb(255, 255, 255);
 
   img {
     transform: rotate(45deg) scale(1.5);

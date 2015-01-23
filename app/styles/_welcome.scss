@@ -1,0 +1,91 @@
+.welcome {
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  h1 {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+
+    /* layout */
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    font-size: 5em;
+    /*bottom: 64px;  center text? */
+    top: 50%;
+    transform: translateY(-40%);
+
+    em {
+      font-style: normal;
+      font-size: 85%;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@media all and (min-width: 56em) {
+  .welcome {
+  /* not for small screen */
+  padding-top: 4em;
+  padding-bottom: 4em;
+
+  /* large screen or wifi */
+  background-image: url(../images/black-wood.jpg);
+
+    h1 {
+      font-size: 5em;
+      bottom: 1rem;
+    }
+
+    .picture-frame {
+      /* layout */
+      position: relative;
+      max-width: 800px;
+      max-height: 500px;
+      overflow: hidden;
+      margin: auto;
+      padding: 0;
+    
+      /* large screen or not small screen at least*/
+      box-shadow:
+        0 0 0 5px rgba(45, 48, 59, 0.8),
+        0 0 0 10px rgba(149, 153, 161, 0.8);
+
+      /* Hopefully all except maybe small screen, use a class name? */
+      img {
+        /* layout */
+        /*position: initial;
+        bottom: auto;
+        left: auto;*/
+
+        max-width: none;
+
+        /*transform-origin: 0 -250px;
+        transform: translate3d(-33.5%, -39.7%, 0) scale(1);*/
+
+        transform-origin: 0 0;
+        transform: translate3d(-30%, -25%, 0) scale(1);
+
+        -webkit-animation-name: zoomout;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-delay: 2s;
+        -webkit-animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes zoomout {
+  from { transform: translate3d(-30%, -25%, 0) scale(1); }
+  to   { transform: translate3d(0, 0, 0) scale(0.391); }
+}
