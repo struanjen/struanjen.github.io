@@ -22,7 +22,7 @@ nav[role="navigation"].fly-in {
     right: 0;
     padding: 0.2 * $base_spacing 0;
     background-color: $nav_content_bg_color;
-    background-color: rgba(255, 255, 255, 0.96);
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 4px $shadow_color_light;
     border-bottom: solid 1px #d6d6d6;
     text-align: center;
@@ -30,16 +30,18 @@ nav[role="navigation"].fly-in {
 
   button#menu {
     position: absolute;
-    top: 0.25em;
+    top: 50%;
     left: 0.5em;
-    border: none;
+    transform: translateY(-50%);
     background: none;
     text-align: left;
-    padding-top: 0.5em;
+    padding-top: 0.25em;
     padding-left: 0.65em;
     padding-right: 0.65em;
-    /*width: 2.5em;
-    height: 2.5em;*/
+    border: solid 1px #a6a6a6;
+    border-radius: 4px;
+    font-family: arial, sans-serif;
+    font-size: 85%;
   }
   button#menu:focus {
     background-color: rgb(220, 220, 220);
@@ -117,6 +119,7 @@ nav[role="navigation"].fly-in {
 nav[role="navigation"].sticky {
   width: 100%;
   position: fixed;
+  z-index: 99;
   top: 0;
   left: 0;
   right: 0;

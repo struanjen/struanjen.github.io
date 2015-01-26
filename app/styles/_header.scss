@@ -1,18 +1,18 @@
 /**********************
  header
 **********************/
-.resize-on-scroll {
+/*.resize-on-scroll {
   header[role="banner"] {
     overflow: visible;
   }
 
   .intro {
-    margin-top: 110vh; /* Only when scroll effect is used*/
+    margin-top: 110vh; / * Only when scroll effect is used* /
   }
-}
+}*/
 
 header[role="banner"] {
-  overflow: hidden; /* Needs to be visible on scroll, if scroll effect is supported */
+  /*overflow: hidden; / * Needs to be visible on scroll, if scroll effect is supported * /
   position: relative;
   min-height: 100vh;
   max-height: 100vh;
@@ -22,9 +22,9 @@ header[role="banner"] {
   padding: 0;
   text-align: center;
 
-  display: flex;
+  display: flex;*/
 
-  h1 {
+  /*h1 {
     position: absolute;
     width: 100%;
     bottom: 60px;
@@ -58,17 +58,19 @@ header[role="banner"] {
     max-width: initial;
     -webkit-transform-origin: 50% 0;
     -webkit-transform: translate3d(-50%, -50%, 0) scale(1);
-  }
+  }*/
 }
 
 @media all and (orientation: portrait) {
   h1 > em {
     display: block;
+    font-size: 1em;
+    line-height: 0.4;
   }
 }
 
 @media all and (min-width: 56em) {
-  header[role="banner"] {
+  /*header[role="banner"] {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -99,5 +101,5 @@ header[role="banner"] {
       transform-origin: 50% 0;
       transform: translate3d(-50%, -50%, 0) scale(1.35);
     }
-  }
+  }*/
 }

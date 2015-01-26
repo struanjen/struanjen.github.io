@@ -1,7 +1,7 @@
 /**********************
  where, when
 **********************/
-main {
+main[role="main"] {
   width: 100%;
   margin: 0 auto;
 
@@ -10,6 +10,7 @@ main {
   }
 
   > section {
+    color: $content_text_color;
     padding-top: $vertical_gutter;
     padding-bottom: $vertical_gutter;
     padding-left: 2 * $base_spacing;
@@ -21,10 +22,26 @@ main {
       max-width: 900px;  
     }
 
-    header .avatar {
+    header {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-title {
+      flex: 1;
+      order: 2;
+    }
+
+    .avatar {
+      flex: 1;
+      order: 1;
+      margin: 16px auto 48px;
+    }
+
+    /*header .avatar {
       float: right;
       margin-top: -1em;
-    }
+    }*/
 
     .section-title {
       color: $accent_color;
@@ -46,6 +63,8 @@ main {
 
     ul {
      list-style-type: circle;
+     margin-left: 15px;
+     padding-left: 15px;
     }
 
     p,
@@ -56,6 +75,9 @@ main {
 
     a {
       color: $link_color;
+      border-bottom: solid 1px $link_color;
+      padding: 0.1em 0.2em;
+      text-decoration: none;
     }
     a:visited {
       color: $link_color_visited;
@@ -64,7 +86,27 @@ main {
       color: $link_color_focus;
     }
     a:hover {
-      color: $link_color_hover;
+      background-color: $link_color;
+      color: rgb(255, 255, 255);
+      border-radius: 3px;
+      transition: background-color 0.4s, border-color 0.4s
+    }
+  }
+}
+
+@media all and (min-width: 56em) {
+  main[role="main"] {
+
+    > section {
+
+        header {
+          display: block;
+        }
+
+      .avatar {
+        float: right;
+        margin: -1em 0 1em 2em;
+      }
     }
   }
 }

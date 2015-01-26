@@ -11,6 +11,14 @@ document.addEventListener('scroll', function() {
   }
 });
 
+if (window.matchMedia("(orientation:portrait)").matches) {
+  console.log('portrait');
+}
+
+if (window.matchMedia("(orientation:landscape)").matches) {
+  console.log('landscape');
+}
+
 if ( window.matchMedia('(min-width: 56em)').matches ) {
   document.querySelector('nav[role="navigation"]').classList.add('sticky');
 } else {
@@ -28,10 +36,14 @@ if ( window.matchMedia('(min-width: 56em)').matches ) {
     
     // Todo: Don't apply to small screen landscape
     
-    WDNG.seeYouThere = function seeYouThere() {
-      console.log('Todo: stop adding this more than once!');
-      el.classList.add('animate-background');
-    };
+    if (window.matchMedia("(orientation:portrait)").matches) {
+      console.log('seeYouthere = ' + typeof WDNG.seeYouThere);
+      WDNG.seeYouThere = function seeYouThere() {
+        console.log('Todo: stop adding this more than once!');
+        el.classList.add('animate-background'); // use insertRule?
+        //WDNG.scrollQ.removeFromScrollQ('seeYouThere');
+      };
+    }
 
     // Add listener condition to scroll queue
     // listen for el reaching position on page
@@ -44,7 +56,7 @@ if ( window.matchMedia('(min-width: 56em)').matches ) {
     };
 
     var condition = function() {
-      return 50;
+      return 60;
     };
 
     //var fnAfter = WDNG.scrollQ.removeFromScrollQ;
@@ -53,12 +65,14 @@ if ( window.matchMedia('(min-width: 56em)').matches ) {
   }());
 }
 
-WDNG.scrollQ.addToScrollQ(WDNG.navbar.navPosition);
+//WDNG.scrollQ.addToScrollQ(WDNG.navbar.navPosition);
+document.addEventListener('scroll', WDNG.navbar.navPosition);
 
 // Test for scroll effect
 // Large screen i.e. > 1024 (1024/16 = 64)
 // Supports offset top on scroll
-if ( window.matchMedia('(min-width: 65em)').matches ) {
+
+/*if ( window.matchMedia('(min-width: 65em)').matches ) {
   console.log('Large screen');
 
   // test for support
@@ -79,4 +93,4 @@ if ( window.matchMedia('(min-width: 65em)').matches ) {
 
   // Reset page position after test
   window.scrollBy(0, -1);
-}
+}*/

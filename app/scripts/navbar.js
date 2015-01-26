@@ -10,13 +10,16 @@ WDNG.navbar = (function() {
     var el = WDNG.util.domEl(selector);
     var triggerEl = WDNG.util.domEl(trigger);
     var offset = WDNG.util.getOffset(triggerEl);
+    console.log('offset:', offset);
+    console.log('triggerEl.offsetTop:', triggerEl.offsetTop);
     var fixedNavId = 'fixed-nav';
     var fixedNav = WDNG.util.domEl('#' + fixedNavId);
     //var clone = el.cloneNode(true);
     //clone.id = fixedNavClassName;
     // append clone and set 'fixed' position
     //console.log('el offset top:', offset);
-    if (offset.top < 80) {
+    //if (offset.top < 80) {
+    if (triggerEl.offsetTop < 80) {
       if (fixedNav === null) {
         //document.body.appendChild(clone);
         //el.style.visibility = 'hidden';
@@ -39,7 +42,7 @@ WDNG.navbar = (function() {
     // Listen for click event on main nav menu button
     menuBtnEl.addEventListener('click', function(e) {
       var menuContentClass = menuContentEl.classList,
-        targetClass = document.querySelector('.js-menu-icn').classList,
+        targetClass,// = document.querySelector('.js-menu-icn').classList,
         action1 = 'add',
         action2 = 'remove';
 
@@ -49,8 +52,8 @@ WDNG.navbar = (function() {
       }
 
       menuContentClass[action1]('menu-open');
-      targetClass[action1]('cross');
-      targetClass[action2]('hamburger');
+      /*targetClass[action1]('cross');
+      targetClass[action2]('hamburger');*/
 
       if (action1 === 'add') {
         menuContentEl.focus();
