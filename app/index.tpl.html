@@ -26,7 +26,15 @@
     <script src="//use.typekit.net/ucv8ige.js"></script>
     <script>
       document.createElement("picture"); // Picture element HTML5 shiv
-      try{Typekit.load();}catch(e){}
+      try {
+        Typekit.load();
+      } catch(e) {
+        document.addEventListener('DOMContentLoaded', function() {
+          _.each(document.querySelectorAll('.tk-penna'), function(el) {
+            el.classList.remove('tk-penna');
+          });
+        });
+      }
     </script>
     
     <!-- build:js scripts/vendor.js -->
@@ -38,39 +46,30 @@
   </head>
   <body>
 
-    <!--
-      - Title
-      - Date and place
-      - Location
-      - Directions
-      - Things to do
-      - Schedule
-      - Contact info
-      - Get in touch: e.g. Confirm acceptance / Send a message / Ask a question
-    -->
-
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
   <!-- Header -->
   <header role="banner">
+    <button type="button" id="menu">Menu
+    <!-- <b class="js-menu-icn icn hamburger segue"></b> --></button>
+    <span class="crest tk-penna">J<b class="crest-amp">&amp;</b>S</span>
     <!--principal navigation -->
-    <nav role="navigation">
-      <header>
-        <button type="button" id="menu">Menu<!-- <b class="js-menu-icn icn hamburger segue"></b> --></button>
-        <span class="crest tk-penna">J<b class="crest-amp">&amp;</b>S</span>
-      </header>
-      <ul class="tk-le-havre menu-content" tabindex="0">
-        <li><a href="#ceremony-and-reception">Ceremony and Reception</a></li>
-        <li><a href="#location">Location</a></li>
-        <li><a href="#how-to-get-there">How to get there</a></li>
-        <li><a href="#where-to-stay">Where to stay</a></li>
-        <li><a href="#things-to-do">Things to do</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#gifts">Gifts</a></li>
-      </ul>
-    </nav>
+    <div class="overlay overlay-scale"> <!-- add classes when small screen -->
+      <button type="button" class="overlay-close">Close</button> <!--  add <button> when small screen -->
+      <nav role="navigation">
+        <ul class="tk-le-havre menu-content" tabindex="0">
+          <li><a href="#ceremony-and-reception"><b>Ceremony and Reception</b></a></li>
+          <li><a href="#location"><b>Location</b></a></li>
+          <li><a href="#how-to-get-there"><b>How to get there</b></a></li>
+          <li><a href="#where-to-stay"><b>Where to stay</b></a></li>
+          <li><a href="#things-to-do"><b>Things to do</b></a></li>
+          <li><a href="#gifts"><b>Gifts</b></a></li>
+          <li><a href="#rsvp"><b>RSVP</b></a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- welcome -->
@@ -117,20 +116,20 @@
     @@include('./content/compiled/where-to-stay.html')
     @@include('./content/compiled/gifts.html')
     @@include('./content/compiled/things-to-do.html')
-
-    <section id="contact">
+    <section id="rsvp">
       <header>
-        <h2 class="section-title">Contact / RSVP</h2>
+        <h2 class="section-title">RSVP</h2>
       </header>
-      <!-- <div class="section-content">
-        <iframe height="525" allowTransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none"  src="https://kingsthings.wufoo.com/embed/z8mqe2l0hvrfoc/"><a href="https://kingsthings.wufoo.com/forms/z8mqe2l0hvrfoc/">Fill out my Wufoo form!</a></iframe>
-      </div> -->
+
+      <div class="section-content">
+        @@include('./content/rsvp.html')
+      </div>
     </section>
   </main>
       
   <!-- Footer -->
   <footer role="contentinfo">
-    <p>J &amp; S 2015</p>
+    <p class="tk-penna">J &amp; S 2015</p>
   </footer>
 
   <script>
@@ -138,10 +137,12 @@
   </script>
   <!-- build:js scripts/main.js -->
   <script src="scripts/util.js"></script>
+  <script src="scripts/classie.js"></script>
   <script src="scripts/scrollQ.js"></script>
   <script src="scripts/navbar.js"></script>
+  <script src="scripts/menu.js"></script>
   <script src="scripts/main.js"></script>
-  <script src="scripts/onload.js"></script>
+  <script src="scripts/wufoo.js"></script>
   <!-- endbuild -->
 </body>
 </html>

@@ -11,6 +11,7 @@ main[role="main"] {
 
   > section {
     color: $content_text_color;
+    font-family: Georgia, serif;
     padding-top: $vertical_gutter;
     padding-bottom: $vertical_gutter;
     padding-left: 2 * $base_spacing;
@@ -38,11 +39,6 @@ main[role="main"] {
       margin: 16px auto 48px;
     }
 
-    /*header .avatar {
-      float: right;
-      margin-top: -1em;
-    }*/
-
     .section-title {
       color: $accent_color;
       font-size: 300%;
@@ -61,14 +57,14 @@ main[role="main"] {
       margin-top: 3 * $base_spacing;
     }
 
-    ul {
+    ul.list {
      list-style-type: circle;
      margin-left: 15px;
      padding-left: 15px;
     }
 
     p,
-    ul {
+    ul.list {
       font-size: 120%;
       line-height: 1.6;
     }
@@ -81,6 +77,7 @@ main[role="main"] {
     }
     a:visited {
       color: $link_color_visited;
+      border-bottom-color: $link_color_visited;
     }
     a:focus {
       color: $link_color_focus;

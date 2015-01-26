@@ -10,7 +10,7 @@
     <p>Please note that the Borders do tend to get crowded so book your accommodation as early as possible. If you don’t see anything that suits please let us know.</p>
 
     <h3>Hotels</h3>
-    <ul>
+    <ul class="list">
       <li><a href="http://www.burtshotel.co.uk" rel="external">Burt's Hotel</a>, Melrose</li>
       <li><a href="http://www.thetownhousemelrose.co.uk" rel="external">The Townhouse Hotel</a>, Melrose</li>
       <li><a href="http://www.glenhotel.co.uk/tariff.html" rel="external">The Glen Hotel</a>, Selkirk</li>
@@ -18,13 +18,13 @@
     </ul>
 
     <h3>Inns and B&Bs</h3>
-    <ul>
+    <ul class="list">
       <li><a href="http://www.buccleucharms.com" rel="external">The Buccleuch Arms</a>, St. Boswells</li>
       <li><a href="http://www.crosskeysettrickbridge.co.uk" rel="external">The Cross Keys</a>, Ettrickbridge</li>
     </ul>
 
     <h3>Self-catering</h3>
-    <ul>
+    <ul class="list">
       <li><a href="http://www.lewinshope.com/index.html" rel="external">The Mill at Lewinshope</a> (Sleeps 8-10)</li>
       <li><a href="http://www.hollinlee.co.uk" rel="external">The Greenhouse</a> (Sleeps up to 6)</li>
     </ul>

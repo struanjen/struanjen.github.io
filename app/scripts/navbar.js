@@ -3,32 +3,29 @@ WDNG.navbar = (function() {
 
   'use strict';
 
-  var selector = 'nav[role="navigation"]',
+  var header = 'header[role="banner"]',
+    selector = 'nav[role="navigation"]',
     trigger = 'main[role="main"]';
 
   function navPosition() {
-    var el = WDNG.util.domEl(selector);
-    var triggerEl = WDNG.util.domEl(trigger);
+    //console.log('navPosition fn');
+    var el = document.querySelector(selector);
+    var triggerEl = document.querySelector(trigger);
+    var headerEl = document.querySelector(header);
     var offset = WDNG.util.getOffset(triggerEl);
-    console.log('offset:', offset);
-    console.log('triggerEl.offsetTop:', triggerEl.offsetTop);
+    //console.log('offset:', offset);
     var fixedNavId = 'fixed-nav';
-    var fixedNav = WDNG.util.domEl('#' + fixedNavId);
-    //var clone = el.cloneNode(true);
-    //clone.id = fixedNavClassName;
-    // append clone and set 'fixed' position
-    //console.log('el offset top:', offset);
-    //if (offset.top < 80) {
-    if (triggerEl.offsetTop < 80) {
+    var fixedNav = document.getElementById(fixedNavId);
+    
+    if (offset.top < 80) {
       if (fixedNav === null) {
-        //document.body.appendChild(clone);
-        //el.style.visibility = 'hidden';
-        el.id = fixedNavId;
+        headerEl.id = fixedNavId;
+        console.log('added "fixedNav"');
         setupMenuBtn();
       }
     } else if (fixedNav) {
       //document.body.removeChild(fixedNav);
-      el.id = '';
+      headerEl.id = '';
       //el.style.visibility = '';
     }
   }
@@ -36,7 +33,7 @@ WDNG.navbar = (function() {
   function setupMenuBtn() {
     'use strict';
 
-    var menuBtnEl = document.querySelector('#fixed-nav #menu'),
+    var menuBtnEl = document.querySelector('#menu'),
       menuContentEl = document.querySelector('.menu-content');
 
     // Listen for click event on main nav menu button

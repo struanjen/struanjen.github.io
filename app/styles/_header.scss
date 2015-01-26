@@ -1,17 +1,68 @@
 /**********************
  header
 **********************/
-/*.resize-on-scroll {
-  header[role="banner"] {
-    overflow: visible;
-  }
-
-  .intro {
-    margin-top: 110vh; / * Only when scroll effect is used* /
-  }
-}*/
 
 header[role="banner"] {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  opacity: 0;
+  padding: 0.2 * $base_spacing 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 4px $shadow_color_light;
+  border-bottom: solid 1px #d6d6d6;
+  text-align: center;
+  
+  transition: .5s ease-in-out opacity;
+
+  &#fixed-nav {
+    opacity: 1;
+  }
+
+  button#menu {
+    position: absolute;
+    top: 50%;
+    left: 0.5em;
+    transform: translateY(-50%);
+    background: none;
+    text-align: left;
+    padding-top: 0.25em;
+    padding-left: 0.65em;
+    padding-right: 0.65em;
+    border: solid 1px #a6a6a6;
+    border-radius: 4px;
+    font-family: arial, sans-serif;
+    font-size: 85%;
+  }
+  button#menu:focus {
+    background-color: rgb(220, 220, 220);
+  }
+  button#menu:hover {
+    background-color: rgb(244, 244, 244);
+  }
+
+  .crest {
+    color: $crest_color;
+    font-size: 160%;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgb(255, 255, 255);
+  }
+  .crest-amp {
+    color: $crest_ampersand;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    opacity: 0.99; /* change stacking order so that & goes behind 'S' */
+  }
+
+  .tk-penna .crest-amp {
+    transform: rotate(-14deg);
+    display: inline-block; /* Allow rotate */
+  } 
+
   /*overflow: hidden; / * Needs to be visible on scroll, if scroll effect is supported * /
   position: relative;
   min-height: 100vh;

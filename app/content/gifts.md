@@ -7,7 +7,7 @@
 
     <p>If however you would like to make a gesture we would love it if you could make a donation to one of the charities that mean a lot to us.</p>
 
-    <ul>
+    <ul class="list">
       <li><a href="https://camfed.org" rel="external">https://camfed.org</a></li>
       <li><a href="http://www.parkinsons.org.uk" rel="external">http://www.parkinsons.org.uk</a></li>
     </ul>

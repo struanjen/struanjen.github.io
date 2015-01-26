@@ -3,14 +3,9 @@ WDNG.util = (function() {
   
   'use strict';
 
-  function domEl(selector) {
-    return document.querySelector(selector);
-  }
-
   function getOffset(el) {
-    var curLeft, curTop;
-    
-    curLeft = curTop = 0;
+    var curLeft = 0,
+      curTop = 0;
 
     if (el && el.offsetParent) {
       do {
@@ -18,7 +13,10 @@ WDNG.util = (function() {
       } while (el = el.offsetParent);
     }
 
-    return {top: curTop, left: curLeft};
+    return {
+      top: curTop,
+      left: curLeft
+    };
   }
 
   function loadImage(path, callback) {
@@ -28,8 +26,21 @@ WDNG.util = (function() {
   }
 
   return {
-    domEl: domEl,
     getOffset: getOffset,
     loadImage: loadImage
   };
 }());
+
+/*var cumulativeOffset = function(element) {
+    var top = 0, left = 0;
+    do {
+        top += element.offsetTop  || 0;
+        left += element.offsetLeft || 0;
+        element = element.offsetParent;
+    } while(element);
+
+    return {
+        top: top,
+        left: left
+    };
+};*/

@@ -1,4 +1,4 @@
-nav[role="navigation"].fly-in {
+/*nav[role="navigation"].fly-in {
   display: block;
   width: 100%;
   position: fixed;
@@ -59,8 +59,8 @@ nav[role="navigation"].fly-in {
   .crest-amp {
     color: $crest_ampersand;
     transform: rotate(-14deg);
-    display: inline-block; /* Allow rotate */
-    opacity: 0.99; /* change stacking order so that & goes behind 'S' */
+    display: inline-block; /* Allow rotate * /
+    opacity: 0.99; /* change stacking order so that & goes behind 'S' * /
   }
 
   ul {
@@ -155,8 +155,8 @@ nav[role="navigation"].sticky {
     .crest-amp {
       color: $crest_ampersand;
       transform: rotate(-14deg);
-      display: inline-block; /* Allow rotate */
-      opacity: 0.99; /* change stacking order so that & goes behind 'S' */
+      display: inline-block; /* Allow rotate * /
+      opacity: 0.99; /* change stacking order so that & goes behind 'S' * /
     }
   }
 
@@ -193,7 +193,7 @@ nav[role="navigation"].sticky {
   }
 }
 
-/* Help show menu in full in landscape */
+/* Help show menu in full in landscape * /
 @media all and (orientation: landscape) {
   nav[role="navigation"].fly-in {
   a {
@@ -202,4 +202,4 @@ nav[role="navigation"].sticky {
     padding-bottom: 0.1em;
   }
   }
-}
+}*/

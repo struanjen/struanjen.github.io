@@ -26,7 +26,15 @@
     <script src="//use.typekit.net/ucv8ige.js"></script>
     <script>
       document.createElement("picture"); // Picture element HTML5 shiv
-      try{Typekit.load();}catch(e){}
+      try {
+        Typekit.load();
+      } catch(e) {
+        document.addEventListener('DOMContentLoaded', function() {
+          _.each(document.querySelectorAll('.tk-penna'), function(el) {
+            el.classList.remove('tk-penna');
+          });
+        });
+      }
     </script>
     
     <!-- build:js scripts/vendor.js -->
@@ -38,39 +46,30 @@
   </head>
   <body>
 
-    <!--
-      - Title
-      - Date and place
-      - Location
-      - Directions
-      - Things to do
-      - Schedule
-      - Contact info
-      - Get in touch: e.g. Confirm acceptance / Send a message / Ask a question
-    -->
-
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
   <!-- Header -->
   <header role="banner">
+    <button type="button" id="menu">Menu
+    <!-- <b class="js-menu-icn icn hamburger segue"></b> --></button>
+    <span class="crest tk-penna">J<b class="crest-amp">&amp;</b>S</span>
     <!--principal navigation -->
-    <nav role="navigation">
-      <header>
-        <button type="button" id="menu">Menu<!-- <b class="js-menu-icn icn hamburger segue"></b> --></button>
-        <span class="crest tk-penna">J<b class="crest-amp">&amp;</b>S</span>
-      </header>
-      <ul class="tk-le-havre menu-content" tabindex="0">
-        <li><a href="#ceremony-and-reception">Ceremony and Reception</a></li>
-        <li><a href="#location">Location</a></li>
-        <li><a href="#how-to-get-there">How to get there</a></li>
-        <li><a href="#where-to-stay">Where to stay</a></li>
-        <li><a href="#things-to-do">Things to do</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#gifts">Gifts</a></li>
-      </ul>
-    </nav>
+    <div class="overlay overlay-scale"> <!-- add classes when small screen -->
+      <button type="button" class="overlay-close">Close</button> <!--  add <button> when small screen -->
+      <nav role="navigation">
+        <ul class="tk-le-havre menu-content" tabindex="0">
+          <li><a href="#ceremony-and-reception"><b>Ceremony and Reception</b></a></li>
+          <li><a href="#location"><b>Location</b></a></li>
+          <li><a href="#how-to-get-there"><b>How to get there</b></a></li>
+          <li><a href="#where-to-stay"><b>Where to stay</b></a></li>
+          <li><a href="#things-to-do"><b>Things to do</b></a></li>
+          <li><a href="#gifts"><b>Gifts</b></a></li>
+          <li><a href="#rsvp"><b>RSVP</b></a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- welcome -->
@@ -160,7 +159,7 @@
 
     <h3>Flying in</h3>
     <h4>Nearest Airports</h4>
-    <ul>
+    <ul class="list">
       <li><a href="http://www.edinburghairport.com/" rel="external">Edinburgh</a>, Scotland: approximately 1 hours drive north of the area, with 24 hour car hire and return facilities.</li>
       <li><a href="http://www.newcastleairport.com/" rel="external">Newcastle</a>, England: approximately 1.5 hours south of the area, with 24 hour car hire and return facilities.</li>
     </ul>
@@ -173,7 +172,7 @@
     <p>The closest stations are Carlisle and Berwick-Upon-Tweed (both about an hours drive to Selkirk).</p>
 
     <h4>Tickets</h4>
-    <ul>
+    <ul class="list">
       <li><a href="http://www.thetrainline.com">http://www.thetrainline.com</a></li>
       <li><a href="http://www.virgintrains.co.uk">http://www.virgintrains.co.uk</a></li>
     </ul>
@@ -196,7 +195,7 @@
     <p>Please note that the Borders do tend to get crowded so book your accommodation as early as possible. If you don’t see anything that suits please let us know.</p>
 
     <h3>Hotels</h3>
-    <ul>
+    <ul class="list">
       <li><a href="http://www.burtshotel.co.uk" rel="external">Burt&#39;s Hotel</a>, Melrose</li>
       <li><a href="http://www.thetownhousemelrose.co.uk" rel="external">The Townhouse Hotel</a>, Melrose</li>
       <li><a href="http://www.glenhotel.co.uk/tariff.html" rel="external">The Glen Hotel</a>, Selkirk</li>
@@ -204,13 +203,13 @@
     </ul>
 
     <h3>Inns and B&amp;Bs</h3>
-    <ul>
+    <ul class="list">
       <li><a href="http://www.buccleucharms.com" rel="external">The Buccleuch Arms</a>, St. Boswells</li>
       <li><a href="http://www.crosskeysettrickbridge.co.uk" rel="external">The Cross Keys</a>, Ettrickbridge</li>
     </ul>
 
     <h3>Self-catering</h3>
-    <ul>
+    <ul class="list">
       <li><a href="http://www.lewinshope.com/index.html" rel="external">The Mill at Lewinshope</a> (Sleeps 8-10)</li>
       <li><a href="http://www.hollinlee.co.uk" rel="external">The Greenhouse</a> (Sleeps up to 6)</li>
     </ul>
@@ -225,7 +224,7 @@
 
     <p>If however you would like to make a gesture we would love it if you could make a donation to one of the charities that mean a lot to us.</p>
 
-    <ul>
+    <ul class="list">
       <li><a href="https://camfed.org" rel="external">https://camfed.org</a></li>
       <li><a href="http://www.parkinsons.org.uk" rel="external">http://www.parkinsons.org.uk</a></li>
     </ul>
@@ -237,10 +236,11 @@
     <figure class="avatar">
       <img src="images/content-melrose-abbey.jpg" width="140" height="140" alt=""/>
     </figure>
-    <p>Staying for a few days? Here are some ideas of activities and attractions:</p>
   </header>
   <div class="section-content">
-    <ul>
+    <p>Staying for a few days? Here are some ideas of activities and attractions:</p>
+
+    <ul class="list">
       <li>Golf</li>
       <li>Glentress for walks and mountain biking</li>
       <li>Walks: Three Brethern, Eildon Hills</li>
@@ -256,20 +256,135 @@
     </ul>
   </div>
 </section>
-
-    <section id="contact">
+    <section id="rsvp">
       <header>
-        <h2 class="section-title">Contact / RSVP</h2>
+        <h2 class="section-title">RSVP</h2>
       </header>
-      <!-- <div class="section-content">
-        <iframe height="525" allowTransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none"  src="https://kingsthings.wufoo.com/embed/z8mqe2l0hvrfoc/"><a href="https://kingsthings.wufoo.com/forms/z8mqe2l0hvrfoc/">Fill out my Wufoo form!</a></iframe>
-      </div> -->
+
+      <div class="section-content">
+        <!-- Imported wufoo form -->
+
+<form id="form1" name="form1" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate
+      action="https://kingsthings.wufoo.com/forms/z8mqe2l0hvrfoc/#public">
+
+<ul>
+
+<li id="foli1" class="notranslate      ">
+<label class="desc" id="title1" for="Field1">
+Name(s):
+<span id="req_1" class="req">*</span>
+</label>
+<div>
+<input id="Field1" name="Field1" type="text" class="field text medium" value="" maxlength="255" tabindex="1" onkeyup=""       required />
+</div>
+</li><li id="foli205" class="notranslate      ">
+<fieldset>
+<![if !IE | (gte IE 8)]>
+<legend id="title205" class="desc">
+Attendance
+<span id="req_205" class="req">*</span>
+</legend>
+<![endif]>
+<!--[if lt IE 8]>
+<label id="title205" class="desc">
+Attendance
+<span id="req_205" class="req">*</span>
+</label>
+<![endif]-->
+<div>
+<input id="radioDefault_205" name="Field205" type="hidden" value="" />
+<span>
+<input id="Field205_0" name="Field205" type="radio" class="field radio" value="Hooray! See you there." tabindex="2" checked="checked"     required />
+<label class="choice" for="Field205_0" >
+Hooray! See you there.</label>
+</span>
+<span>
+<input id="Field205_1" name="Field205" type="radio" class="field radio" value="Boo! Unable to come." tabindex="3"     required />
+<label class="choice" for="Field205_1" >
+Boo! Unable to come.</label>
+</span>
+</div>
+</fieldset>
+</li>
+<li id="foli311"
+class="notranslate      "><label class="desc" id="title311" for="Field311">
+Let us know of a song or two that will get you dancing
+</label>
+
+<div>
+<textarea id="Field311"
+name="Field311"
+class="field textarea small"
+spellcheck="true"
+rows="10" cols="50"
+
+tabindex="4"
+onkeyup=""
+       ></textarea>
+
+</div>
+</li>
+<li id="foli2"
+class="notranslate      "><label class="desc" id="title2" for="Field2">
+Dietary requirements
+<span id="req_2" class="req">*</span>
+</label>
+
+<div>
+<textarea id="Field2"
+name="Field2"
+class="field textarea medium"
+spellcheck="true"
+rows="10" cols="50"
+
+tabindex="5"
+onkeyup=""
+      required  ></textarea>
+
+</div>
+</li>
+<li id="foli313"
+class="notranslate      "><label class="desc" id="title313" for="Field313">
+Any additional information
+</label>
+
+<div>
+<textarea id="Field313"
+name="Field313"
+class="field textarea medium"
+spellcheck="true"
+rows="10" cols="50"
+
+tabindex="6"
+onkeyup=""
+       ></textarea>
+
+</div>
+</li> <li class="buttons ">
+<div>
+
+                    <input id="saveForm" name="saveForm" class="btTxt submit"
+    type="submit" value="Submit"
+ /></div>
+</li>
+
+<li class="hide">
+<label for="comment">Do Not Fill This Out</label>
+<textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+<input type="hidden" id="idstamp" name="idstamp" value="3JuGfr0rZ/u2JU6j5VQB47vI7UGJyFNxFMmfrgced0A=" />
+</li>
+</ul>
+
+<p><span style="height:auto !important;width:auto !important;overflow: auto !important;font-weight:normal;font-size:9px;color:#888;padding:0 0 0 3px;">Form powered by</span><img src="images/powerlogo.png" width="62" height="30" alt="Wufoo" align="top"/></p>
+
+</form>
+      </div>
     </section>
   </main>
       
   <!-- Footer -->
   <footer role="contentinfo">
-    <p>J &amp; S 2015</p>
+    <p class="tk-penna">J &amp; S 2015</p>
   </footer>
 
   <script>
@@ -277,10 +392,12 @@
   </script>
   <!-- build:js scripts/main.js -->
   <script src="scripts/util.js"></script>
+  <script src="scripts/classie.js"></script>
   <script src="scripts/scrollQ.js"></script>
   <script src="scripts/navbar.js"></script>
+  <script src="scripts/menu.js"></script>
   <script src="scripts/main.js"></script>
-  <script src="scripts/onload.js"></script>
+  <script src="scripts/wufoo.js"></script>
   <!-- endbuild -->
 </body>
 </html>

@@ -10,7 +10,7 @@
 
     <h3>Flying in</h3>
     <h4>Nearest Airports</h4>
-    <ul>
+    <ul class="list">
       <li><a href="http://www.edinburghairport.com/" rel="external">Edinburgh</a>, Scotland: approximately 1 hours drive north of the area, with 24 hour car hire and return facilities.</li>
       <li><a href="http://www.newcastleairport.com/" rel="external">Newcastle</a>, England: approximately 1.5 hours south of the area, with 24 hour car hire and return facilities.</li>
     </ul>
@@ -23,7 +23,7 @@
     <p>The closest stations are Carlisle and Berwick-Upon-Tweed (both about an hours drive to Selkirk).</p>
 
     <h4>Tickets</h4>
-    <ul>
+    <ul class="list">
       <li><a href="http://www.thetrainline.com">http://www.thetrainline.com</a></li>
       <li><a href="http://www.virgintrains.co.uk">http://www.virgintrains.co.uk</a></li>
     </ul>
