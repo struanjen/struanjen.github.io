@@ -7,7 +7,7 @@
   </header>
 
   <div class="section-content">
-    <p>Please note that the Borders do tend to get crowded so book your accommodation as early as possible. If you don’t see anything that suits please let us know.</p>
+    <p>The Borders do tend to get crowded so book your accommodation as early as possible. If you don’t see anything that suits please let us know.</p>
 
     <h3>Hotels</h3>
     <ul class="list">
@@ -27,6 +27,11 @@
     <ul class="list">
       <li><a href="http://www.lewinshope.com/index.html" rel="external">The Mill at Lewinshope</a> (Sleeps 8-10)</li>
       <li><a href="http://www.hollinlee.co.uk" rel="external">The Greenhouse</a> (Sleeps up to 6)</li>
+    </ul>
+  <h3>More options:</h3>
+    <ul>
+      <li><a href="http://www.tripadvisor.co.uk/Hotels-g186509-Selkirk_Scottish_Borders_Scotland-Hotels.html" rel="external">Selkirk</a></li>
+      <li><a href="http://www.tripadvisor.co.uk/Hotels-g186506-Melrose_Scottish_Borders_Scotland-Hotels.html" rel="external">Melrose</a></li>
     </ul>
   </div>
 </section>
