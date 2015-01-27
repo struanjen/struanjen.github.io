@@ -1,4 +1,4 @@
-/* global WDNG */
+/* global WDNG console _ */
 WDNG = WDNG || {};
 
 document.addEventListener('scroll', function() { // TODO add debounce and _.each
@@ -12,7 +12,9 @@ document.addEventListener('scroll', function() { // TODO add debounce and _.each
 });
 
 window.addEventListener('resize', function() { // TODO add debounce
-  if (window.matchMedia("(orientation:portrait)").matches) {
+  'use strict';
+
+  if (window.matchMedia('(orientation:portrait)').matches) {
     console.log('portrait');
     document.documentElement.classList.add('portrait'); // TODO don't keep adding though
   } else {
@@ -39,33 +41,33 @@ if ( window.matchMedia('(min-width: 56em)').matches ) {
     
     // Todo: Don't apply to small screen landscape
     
-    if (window.matchMedia("(orientation:portrait)").matches) {
-      console.log('seeYouthere = ' + typeof WDNG.seeYouThere);
+    if (window.matchMedia('(orientation:portrait)').matches) {
+      //console.log('seeYouthere = ' + typeof WDNG.seeYouThere);
       WDNG.seeYouThere = function seeYouThere() {
         console.log('Todo: stop adding this more than once!');
         el.classList.add('animate-background');
         WDNG.scrollQ.removeFromScrollQ('seeYouThere'); // Should remove
         console.log('"seeYouThere" Should be removed from scrollQ');
       };
+
+      // Add listener condition to scroll queue
+      // listen for el reaching position on page
+      // test = WDNG.util.getOffset(el)
+      // condition = function() {}
+      
+      var check = function(condition) {
+        var offset = WDNG.util.getOffset(el);
+        return offset.top < condition();
+      },
+
+      condition = function() {
+        return 60;
+      };
+
+      //var fnAfter = WDNG.scrollQ.removeFromScrollQ;
+      
+      WDNG.scrollQ.addToScrollQ( WDNG.scrollQ.invoker(WDNG.seeYouThere, check, condition) );
     }
-
-    // Add listener condition to scroll queue
-    // listen for el reaching position on page
-    // test = WDNG.util.getOffset(el)
-    // condition = function() {}
-    
-    var check = function(condition) {
-      var offset = WDNG.util.getOffset(el);
-      return offset.top < condition();
-    },
-
-    condition = function() {
-      return 60;
-    };
-
-    //var fnAfter = WDNG.scrollQ.removeFromScrollQ;
-    
-    WDNG.scrollQ.addToScrollQ( WDNG.scrollQ.invoker(WDNG.seeYouThere, check, condition) );
   }());
 }
 

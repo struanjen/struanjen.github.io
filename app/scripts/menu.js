@@ -1,7 +1,9 @@
 (function() {
+  'use strict';
+
   var triggerBttn = document.getElementById('menu'),
     overlay = document.querySelector( '.overlay' ),
-    closeBttn = document.querySelector( 'button.overlay-close' );
+    closeBttn = document.querySelector( 'button.overlay-close' ),
     transEndEventNames = {
       'WebkitTransition': 'webkitTransitionEnd',
       'MozTransition': 'transitionend',

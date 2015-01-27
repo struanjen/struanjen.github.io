@@ -31,7 +31,6 @@ WDNG.navbar = (function() {
   }
 
   function setupMenuBtn() {
-    'use strict';
 
     var menuBtnEl = document.querySelector('#menu'),
       menuContentEl = document.querySelector('.menu-content');
