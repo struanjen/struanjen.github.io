@@ -26,13 +26,21 @@
     <script src="//use.typekit.net/ucv8ige.js"></script>
     <script>
       document.createElement("picture"); // Picture element HTML5 shiv
+
       try {
         Typekit.load();
       } catch(e) {
+        // Remove typekit class names if font cannot be loaded
+        var removeClassFromElement = function removeClass(className) {
+          return function(el) {
+            el.classList.remove(className);
+          };
+        },
+        removeTkPenna = removeClassFromElement('tk-penna'),
+        removeTkLeHavre = removeClassFromElement('tk-le-havre');
         document.addEventListener('DOMContentLoaded', function() {
-          _.each(document.querySelectorAll('.tk-penna'), function(el) {
-            el.classList.remove('tk-penna');
-          });
+          _.each(document.querySelectorAll('.tk-penna'), removeTkPenna);
+          _.each(document.querySelectorAll('.tk-le-havre'), removeTkLeHavre);
         });
       }
     </script>
@@ -40,7 +48,6 @@
     <!-- build:js scripts/vendor.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <script src="../bower_components/lodash/dist/lodash.compat.js"></script>
-    <script src="lib/enhance.js"></script>
     <script src="lib/picturefill.min.js"></script>
     <!-- endbuild -->    
   </head>
@@ -110,15 +117,16 @@
   </div>
 
   <main role="main">
-    @@include('./content/compiled/ceremony-reception.html')
-    @@include('./content/compiled/location.html')
-    @@include('./content/compiled/how-to-get-there.html')
-    @@include('./content/compiled/where-to-stay.html')
-    @@include('./content/compiled/gifts.html')
-    @@include('./content/compiled/things-to-do.html')
+    @@include('./content/ceremony-reception.html')
+    @@include('./content/location.html')
+    @@include('./content/how-to-get-there.html')
+    @@include('./content/where-to-stay.html')
+    @@include('./content/gifts.html')
+    @@include('./content/things-to-do.html')
+
     <section id="rsvp">
       <header>
-        <h2 class="section-title">RSVP</h2>
+        <h2 class="section-title tk-le-havre">RSVP</h2>
       </header>
 
       <div class="section-content">
@@ -140,6 +148,7 @@
   <script src="scripts/util.js"></script>
   <script src="scripts/scrollQ.js"></script>
   <script src="scripts/navbar.js"></script>
+  <script src="scripts/seeYouThere.js"></script>
   <script src="scripts/menu.js"></script>
   <script src="scripts/main.js"></script>
   <!-- endbuild -->

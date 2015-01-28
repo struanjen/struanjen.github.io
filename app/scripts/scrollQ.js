@@ -43,9 +43,9 @@ WDNG.scrollQ = (function() {
   }
   
   return {
-    addToScrollQ: addToScrollQ,
-    removeFromScrollQ: removeFromScrollQ,
-    getScrollQ: getScrollQ,
+    add: addToScrollQ,
+    remove: removeFromScrollQ,
+    get: getScrollQ,
     invoker: invoker
   };
 }());

@@ -8,15 +8,15 @@ WDNG.navbar = (function() {
     trigger = 'main[role="main"]';
 
   function navPosition() {
-    //console.log('navPosition fn');
-    var el = document.querySelector(selector);
-    var triggerEl = document.querySelector(trigger);
-    var headerEl = document.querySelector(header);
-    var offset = WDNG.util.getOffset(triggerEl);
-    console.log('offset:', offset);
-    var fixedNavId = 'fixed-nav';
-    var fixedNav = document.getElementById(fixedNavId);
+    var el = document.querySelector(selector),
+      triggerEl = document.querySelector(trigger),
+      headerEl = document.querySelector(header),
+      offset = WDNG.util.getOffset(triggerEl),
+      fixedNavId = 'fixed-nav',
+      fixedNav = document.getElementById(fixedNavId);
     
+    console.log('offset:', offset);
+
     if (offset.top < 80) {
       if (fixedNav === null) {
         headerEl.id = fixedNavId;
@@ -31,7 +31,6 @@ WDNG.navbar = (function() {
   }
 
   function setupMenuBtn() {
-
     var menuBtnEl = document.querySelector('#menu'),
       menuContentEl = document.querySelector('.menu-content');
 
@@ -62,8 +61,26 @@ WDNG.navbar = (function() {
     });
   }
 
+  function init() {
+    var check = function(condition) {
+      var offset = WDNG.util.getOffset(el);
+      return condition(offset.top);
+    },
+
+    condition = function(val) {
+      return val < 80;
+    };
+
+
+  }
+
   return {
-    navPosition: navPosition,
+    init: init,
+    position: navPosition,
     setupMenuBtn: setupMenuBtn
   };
-}());
+}(WDNG));
+
+
+//WDNG.scrollQ.add( WDNG.scrollQ.invoker(WDNG.navbar.position, check, condition) );
+WDNG.scrollQ.add( WDNG.navbar.position );

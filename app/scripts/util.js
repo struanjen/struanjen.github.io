@@ -5,18 +5,15 @@ WDNG.util = (function() {
 
   function getOffset(el) {
     var curLeft = 0,
-      curTop = 0,
-      boundingRect = el.getBoundingClientRect();
+      curTop = 0;
 
-    if (!boundingRect) {
-      if (el && el.offsetParent) {
-        do {
-          curTop += el.offsetTop - el.scrollTop;
-          el = el.offsetParent;
-        } while (el);
-      }
-    } else {
-      curTop = boundingRect.top
+    if ('getBoundingClientRect' in el) {
+      curTop = el.getBoundingClientRect().top;
+    } else if (el && el.offsetParent) {
+      do {
+        curTop += el.offsetTop - el.scrollTop;
+        el = el.offsetParent;
+      } while (el);
     }
 
     return {
@@ -35,17 +32,3 @@ WDNG.util = (function() {
     loadImage: loadImage
   };
 }());
-
-/*var cumulativeOffset = function(element) {
-    var top = 0, left = 0;
-    do {
-        top += element.offsetTop  || 0;
-        left += element.offsetLeft || 0;
-        element = element.offsetParent;
-    } while(element);
-
-    return {
-        top: top,
-        left: left
-    };
-};*/
