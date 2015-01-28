@@ -13,13 +13,17 @@ document.addEventListener('scroll', function() { // TODO add debounce and _.each
 
 window.addEventListener('resize', function() { // TODO add debounce
   'use strict';
+  var docElClassList = document.documentElement.classList;
+
+  docElClassList.remove('landscape');
+  docElClassList.remove('portrait');
 
   if (window.matchMedia('(orientation:portrait)').matches) {
     console.log('portrait');
-    document.documentElement.classList.add('portrait'); // TODO don't keep adding though
+    docElClassList.add('portrait'); // TODO don't keep adding though
   } else {
     console.log('landscape');
-    document.documentElement.classList.add('landscape'); // TODO don't keep adding though
+    docElClassList.add('landscape'); // TODO don't keep adding though
   }
 });
 
@@ -72,3 +76,9 @@ if ( window.matchMedia('(min-width: 56em)').matches ) {
 }
 
 window.addEventListener('scroll', _.debounce(WDNG.navbar.navPosition, 40));
+/*window.addEventListener('scroll', _.debounce(function() {
+  console.log('Scrolling window');
+  var intro = document.getElementById('intro');
+  var cr = intro.getBoundingClientRect();
+  console.log(cr); // use top
+}));*/

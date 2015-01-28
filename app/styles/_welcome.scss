@@ -14,10 +14,14 @@
     position: absolute;
     z-index: 10;
     width: 100%;
-    font-size: 5em;
+    font-size: 4em;
     /*bottom: 64px;  center text? */
     top: 50%;
     transform: translateY(-40%);
+
+    &.tk-penna {
+      font-size: 5em;
+    }
 
     em {
       font-style: normal;

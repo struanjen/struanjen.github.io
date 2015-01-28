@@ -20,7 +20,12 @@ section.window-shade {
   background-repeat: no-repeat;
 
   h1 {
+    font-size: 4em;
     z-index: 1; /* used in conjunction with additional background on 'specs' */
+
+    &.tk-le-havre {
+      font-size: 5em;
+    }
   }
 
   h1 > em {

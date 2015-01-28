@@ -5,17 +5,22 @@ WDNG.util = (function() {
 
   function getOffset(el) {
     var curLeft = 0,
-      curTop = 0;
+      curTop = 0,
+      boundingRect = el.getBoundingClientRect();
 
-    if (el && el.offsetParent) {
-      do {
-        curTop += el.offsetTop - el.scrollTop;
-      } while (el = el.offsetParent);
+    if (!boundingRect) {
+      if (el && el.offsetParent) {
+        do {
+          curTop += el.offsetTop - el.scrollTop;
+          el = el.offsetParent;
+        } while (el);
+      }
+    } else {
+      curTop = boundingRect.top
     }
 
     return {
-      top: curTop,
-      left: curLeft
+      top: curTop
     };
   }
 

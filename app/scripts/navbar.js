@@ -13,7 +13,7 @@ WDNG.navbar = (function() {
     var triggerEl = document.querySelector(trigger);
     var headerEl = document.querySelector(header);
     var offset = WDNG.util.getOffset(triggerEl);
-    //console.log('offset:', offset);
+    console.log('offset:', offset);
     var fixedNavId = 'fixed-nav';
     var fixedNav = document.getElementById(fixedNavId);
     

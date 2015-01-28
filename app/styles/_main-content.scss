@@ -41,7 +41,11 @@ main[role="main"] {
 
     .section-title {
       color: $accent_color;
-      font-size: 300%;
+      font-size: 200%;
+      
+      &.tk-le-havre {
+        font-size: 300%;
+      }
     }
     
     header > p {
@@ -65,7 +69,7 @@ main[role="main"] {
 
     p,
     ul.list {
-      font-size: 120%;
+      font-size: 100%;
       line-height: 1.6;
     }
 
