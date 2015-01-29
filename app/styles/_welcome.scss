@@ -15,7 +15,6 @@
     z-index: 10;
     width: 100%;
     font-size: 4em;
-    /*bottom: 64px;  center text? */
     top: 50%;
     transform: translateY(-40%);
 
@@ -66,20 +65,13 @@
 
       /* Hopefully all except maybe small screen, use a class name? */
       img {
-        /* layout */
-        /*position: initial;
-        bottom: auto;
-        left: auto;*/
 
         max-width: none;
-
-        /*transform-origin: 0 -250px;
-        transform: translate3d(-33.5%, -39.7%, 0) scale(1);*/
 
         transform-origin: 0 0;
         transform: translate3d(-30%, -25%, 0) scale(1);
 
-        -webkit-animation-name: zoomoutXXXX;
+        -webkit-animation-name: zoomout;
         -webkit-animation-duration: 3s;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-iteration-count: 1;

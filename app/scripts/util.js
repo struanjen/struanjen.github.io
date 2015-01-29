@@ -4,8 +4,7 @@ WDNG.util = (function() {
   'use strict';
 
   function getOffset(el) {
-    var curLeft = 0,
-      curTop = 0;
+    var curTop = 0;
 
     if ('getBoundingClientRect' in el) {
       curTop = el.getBoundingClientRect().top;

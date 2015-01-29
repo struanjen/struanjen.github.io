@@ -1,5 +1,4 @@
 /* global WDNG, console, _ */
-WDNG = WDNG || {};
 
 /* Scroll listener */
 document.addEventListener('scroll', _.debounce(function() {
@@ -30,7 +29,7 @@ window.addEventListener('resize', _.debounce(function() {
 }, 25));
 
 /* Add appropriate class names for the menu bar */
-if ( window.matchMedia('(min-width: 56em)').matches ) {
+if ( window.matchMedia('(min-width: 80em)').matches ) {
   document.querySelector('nav[role="navigation"]').classList.add('sticky');
   console.log('Added sticky to nav');
 } else {

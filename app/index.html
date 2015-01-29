@@ -84,8 +84,8 @@
     <div class="picture-frame">
       <h1 class="tk-penna">Jennifer  <em>&amp;</em> Struan</h1>
         <picture>
-          <!-- <source media="(min-width: 56em)" srcset="images/jsmountains-2048.jpg"> -->
-          <source media="(min-width: 33em)" srcset="images/jsmountains-2048.jpg">
+          <source media="(min-width: 49em)" srcset="images/jsmountains-2048.jpg">
+          <source media="(max-width: 48em)" srcset="images/js-lean-768.jpg">
           <source media="(max-width: 32em)" srcset="images/js-lean-640.jpg">
           <source media="(max-width: 20em)" srcset="images/js-lean-320.jpg">
           <img src="images/js-lean-640.jpg" alt="Jen and Struan are getting married">
@@ -440,7 +440,7 @@ onkeyup=""
   <!-- endbuild -->
 
 <script>
-var z8mqe2l0hvrfoc;
+//var z8mqe2l0hvrfoc;
 (function(d, t) {
   var s = d.createElement(t),
     options = {
@@ -451,16 +451,16 @@ var z8mqe2l0hvrfoc;
       'async':true,
       'host':'wufoo.com',
       'header':'show',
-      'ssl':true};
+      'ssl':true
+    };
 
-  s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+  // change to protocol independent
+  s.src = '//www.wufoo.com/scripts/embed/form.js';
   s.onload = s.onreadystatechange = function() {
     var rs = this.readyState;
     if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-    /*try { z8mqe2l0hvrfoc = new WufooForm();z8mqe2l0hvrfoc.initialize(options);z8mqe2l0hvrfoc.display(); } catch (e) {}*/
   };
-  //var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-  })(document, 'script');
+})(document, 'script');
 </script>
 
 </body>

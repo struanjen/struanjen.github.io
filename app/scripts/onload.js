@@ -1,8 +1,8 @@
-/* global WDNG, console */
+/* global WDNG */
 WDNG.onload = (function() {
 
   'use strict';
 
-  var images = [];
+  //var images = [];
 
 }());

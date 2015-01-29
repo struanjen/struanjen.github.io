@@ -1,3 +1,5 @@
+/* global Modernizr, classie */
+
 (function() {
   'use strict';
 

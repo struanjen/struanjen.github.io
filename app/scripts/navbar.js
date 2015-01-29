@@ -15,12 +15,12 @@ WDNG.navbar = (function() {
       fixedNavId = 'fixed-nav',
       fixedNav = document.getElementById(fixedNavId);
     
-    console.log('offset:', offset);
+    //console.log('offset:', offset);
 
     if (offset.top < 80) {
       if (fixedNav === null) {
         headerEl.id = fixedNavId;
-        console.log('added "fixedNav"');
+        //console.log('added "fixedNav"');
         setupMenuBtn();
       }
     } else if (fixedNav) {
@@ -35,9 +35,8 @@ WDNG.navbar = (function() {
       menuContentEl = document.querySelector('.menu-content');
 
     // Listen for click event on main nav menu button
-    menuBtnEl.addEventListener('click', function(e) {
+    menuBtnEl.addEventListener('click', function() {
       var menuContentClass = menuContentEl.classList,
-        targetClass,// = document.querySelector('.js-menu-icn').classList,
         action1 = 'add',
         action2 = 'remove';
 
