@@ -61,55 +61,7 @@ header[role="banner"] {
   .tk-penna .crest-amp {
     transform: rotate(-14deg);
     display: inline-block; /* Allow rotate */
-  } 
-
-  /*overflow: hidden; / * Needs to be visible on scroll, if scroll effect is supported * /
-  position: relative;
-  min-height: 100vh;
-  max-height: 100vh;
-  height: 100vh;
-  
-  margin: 0;
-  padding: 0;
-  text-align: center;
-
-  display: flex;*/
-
-  /*h1 {
-    position: absolute;
-    width: 100%;
-    bottom: 60px;
-    top: auto;
-    z-index: 10;
-    font-size: 6em;
-    margin: auto;
-    color: $title_text_color;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    line-height: 1;
-
-    animation-name: fadein;
-    animation-duration: 2.2s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: 1;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-
-    em {
-      font-style: normal;
-      font-size: 85%;
-    }
   }
-
-  img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 0;
-    max-width: initial;
-    -webkit-transform-origin: 50% 0;
-    -webkit-transform: translate3d(-50%, -50%, 0) scale(1);
-  }*/
 }
 
 @media all and (orientation: portrait) {
