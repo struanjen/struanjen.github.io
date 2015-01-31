@@ -60,11 +60,18 @@ gulp.task('mrkdwn', function () {
 
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
+    //.pipe($.webp())
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
     })))
     .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('webp', function () {
+    return gulp.src('app/images/**/*')
+        .pipe($.webp())
+        .pipe(gulp.dest('dist/images-webp'));
 });
 
 gulp.task('fonts', function () {
