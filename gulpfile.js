@@ -24,7 +24,7 @@ gulp.task('jshint', function () {
     ;
 });
 
-gulp.task('html', ['mrkdwn', 'styles'], function () {
+gulp.task('html', ['styles'], function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
   return gulp.src('app/*.tpl.html')
@@ -37,7 +37,7 @@ gulp.task('html', ['mrkdwn', 'styles'], function () {
       basepath: '@file'
     }))
     .pipe($.useref())
-    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true, empty: true})))
     .pipe($.if('*.tpl.html', $.rename('index.html')))
     .pipe(gulp.dest('dist'));
 });
@@ -134,7 +134,7 @@ gulp.task('watch', ['connect'], function () {
   ]).on('change', $.livereload.changed);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
-  gulp.watch('app/content/*.md', ['mrkdwn', 'devhtml']);
+  gulp.watch('app/content/*.md', ['devhtml']);
   gulp.watch('app/*.tpl.html', ['devhtml']);
   gulp.watch('bower.json', ['wiredep']);
 });
