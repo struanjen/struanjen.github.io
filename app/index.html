@@ -42,7 +42,6 @@
     <script src="//use.typekit.net/ucv8ige.js"></script>
     <script>
       document.createElement("picture"); // Picture element HTML5 shiv
-
       try {
         Typekit.load();
       } catch(e) {
@@ -75,8 +74,7 @@
 
   <!-- Header -->
   <header role="banner">
-    <button type="button" id="menu">Menu
-    <!-- <b class="js-menu-icn icn hamburger segue"></b> --></button>
+    <button type="button" id="menu">Menu</button>
     <span class="crest tk-penna">J<b class="crest-amp">&amp;</b>S</span>
     <!--principal navigation -->
     <div class="overlay overlay-scale"> <!-- add classes when small screen -->
@@ -100,10 +98,15 @@
     <div class="picture-frame">
       <h1 class="tk-penna">Jennifer  <em>&amp;</em> Struan</h1>
         <picture>
-          <source media="(min-width: 49em)" srcset="images/jsmountains-2048.jpg">
-          <source media="(max-width: 48em)" srcset="images/js-lean-768.jpg">
-          <source media="(max-width: 32em)" srcset="images/js-lean-640.jpg">
-          <source media="(max-width: 20em)" srcset="images/js-lean-320.jpg">
+          <source media="(max-width: 60em)" srcset="images/js-lean-720.webp, images/js-lean-720.jpg"> <!-- e.g. nexus 5 3 x pixel ratio-->
+          <source media="(min-width: 49em)"
+            srcset="images/jsmountains-2048.webp, images/jsmountains-2048.jpg">
+          <source media="(max-width: 48em)"
+            srcset="images/js-lean-768.webp, images/js-lean-768.jpg">
+          <source media="(max-width: 32em)"
+            srcset="images/js-lean-640.webp, images/js-lean-640.jpg">
+          <source media="(max-width: 20em)"
+            srcset="images/js-lean-320.webp, images/js-lean-320.jpg">
           <img src="images/js-lean-640.jpg" alt="Jen and Struan are getting married">
         </picture>
     </div>
@@ -177,7 +180,7 @@
   <header>
     <h2 class="section-title tk-le-havre">Location</h2>
     <figure class="avatar">
-      <img src="images/content-aikwood-tower2.jpg" width="140" height="140" alt=""/>
+      <img src="images/content-aikwood-tower.jpg" width="140" height="140" alt=""/>
     </figure>
   </header>
   <div class="section-content">
@@ -291,22 +294,22 @@
       <li><a href="http://www.scottsabbotsford.com/" rel="external">Abbotsford House</a> - Not to be missed! Sir Walter Scott's family home.</li>
       <li><a href="http://www.historic-scotland.gov.uk/propertyresults/propertyoverview.htm?PropID=PL_097" rel="external">Dryburgh Abbey</a></li>
       <li><a href="http://www.historic-scotland.gov.uk/propertyresults/propertyoverview.htm?PropID=PL_165" rel="external">Kelso Abbey</a></li>
-      <li><a href="http://www.visitscotland.com/see-do/attractions/historic/scottish-borders/" rel="external">More...</a></li>
+      <li><a href="http://www.visitscotland.com/see-do/attractions/historic/scottish-borders/" rel="external">More historical things to do...</a></li>
     </ul>
 
     <h3>Outdoorsy</h3>
     <ul class="list">
       <li>Favourite local walks include the Three Bretheren and the Eilden Hills.  <a href="http://www.walkhighlands.co.uk/borders/melrose.shtml" rel="external">Walk highlands</a> has info on these and other local walks.</li>
       <li>There are lots of options for playing <a href="http://www.visitscotland.com/info/see-do/searchresults?prodtypes=ACTI&refined=1&refine-category=on&src_category=cg034&refine-place=on&src_area=9981&refine-location=&loc_address=&loc_place=&loc_polygon=&loc_placeprox=&src_location=&src_pcproximity_bands=50%7C20%7C10%7C5%7C2%7C1&src_pcproximity_dist=50&refine-name=on&src_name=&submit=Search" rel="external">golf</a>. Do check that the courses will rent you clubs before you book! Any serious golfers should check with Struan for more info.</li>
-      <li><a href="http://www.visitscotland.com/see-do/activities/scottish-borders/" rel="external">More...</a></li>
+      <li><a href="http://www.visitscotland.com/see-do/activities/scottish-borders/" rel="external">More outdoorsy things to do...</a></li>
     </ul>
 
     <h3>Further afield</h3>
     <ul class="list">
       <li>Edinburgh is about an hour north of Selkirk</li>
       <li><a href="http://www.visithadrianswall.co.uk/" rel="external">Hadrian's Wall</a> is about 90 minutes south of Selkirk</li>
-      <li><a href="http://www.visitscotland.com/destinations-maps/scottish-borders/see-do/" rel="external">More...</a></li>
-    <ul>
+      <li><a href="http://www.visitscotland.com/destinations-maps/scottish-borders/see-do/" rel="external">More things to do further afield...</a></li>
+    </ul>
 
   </div>
 </section>
@@ -330,7 +333,7 @@ Name(s):
 <span id="req_1" class="req">*</span>
 </label>
 <div>
-<input id="Field1" name="Field1" type="text" class="field text large" value="" maxlength="255" tabindex="1" onkeyup="" required />
+<input id="Field1" name="Field1" type="text" class="field text large" value="" maxlength="255" onkeyup="" required />
 </div>
 </li><li id="foli205" class="notranslate      ">
 <fieldset>
@@ -349,12 +352,12 @@ Attendance
 <div>
 <input id="radioDefault_205" name="Field205" type="hidden" value="" />
 <span>
-<input id="Field205_0" name="Field205" type="radio" class="field radio" value="Hooray! See you there." tabindex="2" checked="checked"     required />
+<input id="Field205_0" name="Field205" type="radio" class="field radio" value="Hooray! See you there." checked="checked"     required />
 <label class="choice" for="Field205_0" >
 Hooray! See you there.</label>
 </span>
 <span>
-<input id="Field205_1" name="Field205" type="radio" class="field radio" value="Boo! Unable to come." tabindex="3"     required />
+<input id="Field205_1" name="Field205" type="radio" class="field radio" value="Boo! Unable to come." required />
 <label class="choice" for="Field205_1" >
 Boo! Unable to come.</label>
 </span>
@@ -372,8 +375,6 @@ name="Field311"
 class="field textarea small"
 spellcheck="true"
 rows="10" cols="50"
-
-tabindex="4"
 onkeyup=""
        ></textarea>
 
@@ -382,7 +383,6 @@ onkeyup=""
 <li id="foli2"
 class="notranslate      "><label class="desc" id="title2" for="Field2">
 Dietary requirements
-<span id="req_2" class="req">*</span>
 </label>
 
 <div>
@@ -391,8 +391,6 @@ name="Field2"
 class="field textarea medium"
 spellcheck="true"
 rows="10" cols="50"
-
-tabindex="5"
 onkeyup=""
       required  ></textarea>
 
@@ -409,8 +407,6 @@ name="Field313"
 class="field textarea medium"
 spellcheck="true"
 rows="10" cols="50"
-
-tabindex="6"
 onkeyup=""
        ></textarea>
 
@@ -430,7 +426,7 @@ onkeyup=""
 </li>
 </ul>
 
-<p><span style="height:auto !important;width:auto !important;overflow: auto !important;font-weight:normal;font-size:9px;color:#888;padding:0 0 0 3px;">Form powered by</span><img src="images/powerlogo.png" width="62" height="30" alt="Wufoo" align="top"/></p>
+<p><span style="height:auto !important;width:auto !important;overflow: auto !important;font-weight:normal;font-size:9px;color:#aaa;padding:0 0 0 3px;">Form powered by</span><img src="images/powerlogo.png" width="62" height="30" alt="Wufoo" align="top"/></p>
 
 </form>
       </div>

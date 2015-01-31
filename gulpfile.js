@@ -71,7 +71,8 @@ gulp.task('images', function () {
 gulp.task('webp', function () {
     return gulp.src('app/images/**/*')
         .pipe($.webp())
-        .pipe(gulp.dest('dist/images-webp'));
+        //.pipe(gulp.dest('dist/images-webp'));
+        .pipe(gulp.dest('app/images/'));
 });
 
 gulp.task('fonts', function () {
