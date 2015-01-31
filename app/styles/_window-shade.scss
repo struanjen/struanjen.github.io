@@ -61,9 +61,9 @@ section.window-shade {
 
     &.animate-background {
       animation-name: animatebackground;
-      animation-duration: 4s;
+      animation-duration: 3s;
       animation-timing-function: linear;
-      animation-iteration-count: 8;
+      animation-iteration-count: 12;
       animation-delay: 0.3s;
       animation-fill-mode: both;
       animation-direction: alternate;
@@ -71,11 +71,7 @@ section.window-shade {
   }
 }
 
-section.window-shade:nth-child(2) {
-  background-color: rgb(200, 190, 255);
-}
-
-@media all and (min-width: 56em) {
+@media screen and (min-width: 56em) {
   section.window-shade {
     background-attachment: fixed;
     
@@ -87,5 +83,12 @@ section.window-shade:nth-child(2) {
     h1 {
       font-size: 600%;
     }
+  }
+}
+
+/* iPad fix for skewed background image */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+  section.window-shade {
+    background-attachment: scroll;
   }
 }

@@ -1,0 +1,121 @@
+@page {
+  margin: 2cm 2cm 3cm 2cm;
+}
+
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: rgb(80, 80, 80);
+  font-size: 12pt;
+}
+
+header[role="banner"] {
+  display: none;
+}
+
+.welcome {
+  height: auto;
+  margin: 20px 20px 0 20px;
+  border: solid 1px rgb(180, 180, 180);
+  border-bottom: none;
+}
+
+.welcome h1 {
+  color: rgb(0, 0, 0) !important;
+  position: relative;
+  top: 0;
+  transform: translateY(0);
+}
+
+.welcome img {
+  display: none;
+}
+
+.intro {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  border: solid 1px rgb(180, 180, 180);
+  border-top: none;
+}
+
+section.window-shade {
+  background: none !important;
+  color: rgb(0, 0, 0) !important;
+  display: block;
+  height: auto; 
+}
+
+section.specs {
+  display: none;
+}
+
+section.window-shade h1 {
+  font-size: 200%;
+}
+
+h1 > em {
+  display: inline !important;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+main[role="main"] section + section {
+  border-bottom: solid 1px rgb(180, 180, 180);
+}
+
+main[role="main"] > section {
+  color: inherit;
+}
+
+main[role="main"] > section:nth-child(even) {
+  background: none !important;
+}
+
+main[role="main"] > section > header {
+  height: auto;
+  max-width: 100%;
+  page-break-after: avoid !important;
+  page-break-inside: avoid !important;
+}
+
+main[role="main"] > section > header .section-title {
+  color: rgb(0, 0, 0) !important;
+}
+
+main[role="main"] > section > .section-content {
+  orphans: 3;
+  page-break-before: avoid !important;
+  max-width: 100% !important;
+}
+
+figure {
+  display: none;
+}
+
+time {
+  color: rgb(140, 140, 140);
+}
+
+#rsvp {
+  display: none;
+}
+
+footer[role="contentinfo"] {
+  color: rgb(0, 0, 0) !important;
+  font-size: 120%;
+}
+
+a {
+  color: rgb(0, 0, 0) !important;
+  border-bottom-color: rgb(0, 0, 0) !important;
+}
+a:after,
+a:visited:after {
+  font-size: 75%;
+  content: ' (' attr(href) ') ';
+}

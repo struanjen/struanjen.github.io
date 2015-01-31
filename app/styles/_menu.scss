@@ -45,14 +45,13 @@
 
 .overlay ul li {
   display: block;
-  height: 20%;
-  height: calc(100% / 4);
-  min-height: 54px;
+  margin-bottom: 0.75em;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .overlay ul li a {
+  font-size: 150%;
   font-weight: normal;
   display: block;
   color: #fff;
@@ -79,17 +78,9 @@
   transition: transform 0.4s, opacity 0.4s;
 }
 
-@media screen and (max-height: 30.5em) {
-  .overlay nav {
-    height: 70%;
-    /*font-size: 34px;*/
-  }
-  .overlay ul li {
-    min-height: 34px;
-  }
-}
-
 nav.grid {
+  height: 70%;
+  
   ul {
     display: flex;
     align-items: center;
@@ -102,6 +93,10 @@ nav.grid {
 
     li {
       flex: 0 0 42%;
+      height: 20%;
+      height: calc(100% / 4);
+      min-height: 54px;
+      margin-bottom: 0;
 
       a {
         font-size: 150%;
