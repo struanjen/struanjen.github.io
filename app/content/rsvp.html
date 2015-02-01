@@ -11,7 +11,8 @@ Name(s):
 <span id="req_1" class="req">*</span>
 </label>
 <div>
-<input id="Field1" name="Field1" type="text" class="field text large" value="" maxlength="255" onkeyup="" required />
+  <input id="Field1" name="Field1" type="text" class="field text large" value="" maxlength="255" onkeyup="" required aria-describedby="names-tip"/>
+  <div role="tooltip" id="names-tip">Please enter your name and any others on your invite</div>
 </div>
 </li><li id="foli205" class="notranslate      ">
 <fieldset>
@@ -54,23 +55,25 @@ class="field textarea small"
 spellcheck="true"
 rows="10" cols="50"
 onkeyup=""
-       ></textarea>
-
+aria-describedby="music-tip"></textarea>
+  <div role="tooltip" id="music-tip">No Gangnam Style</div>
 </div>
 </li>
 <li id="foli2"
-class="notranslate      "><label class="desc" id="title2" for="Field2">
+class="notranslate"><label class="desc" id="title2" for="Field2">
 Dietary requirements
 </label>
 
 <div>
-<textarea id="Field2"
-name="Field2"
-class="field textarea medium"
-spellcheck="true"
-rows="10" cols="50"
-onkeyup=""
-      required  ></textarea>
+  <textarea id="Field2"
+  name="Field2"
+  class="field textarea medium"
+  spellcheck="true"
+  rows="10" cols="50"
+  onkeyup=""
+  required
+  aria-describedby="dietary-tip"></textarea>
+  <div role="tooltip" id="dietary-tip">For example any allergies we should know about</div>
 
 </div>
 </li>

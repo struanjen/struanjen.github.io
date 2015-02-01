@@ -84,3 +84,27 @@ input[type="submit"]:focus {}
 input[type="submit"]:active {
   top: -1px;
 }
+
+
+/* Tooltip additions */
+form > ul > li + li {
+  margin-top: 2em;
+}
+form > ul > li {
+  padding-bottom: 0;
+}
+
+[role="tooltip"] {
+  display: none;
+}
+
+input:focus + [role="tooltip"],
+textarea:focus + [role="tooltip"] {
+  display: block;
+  position: absolute;
+  top: 100%;
+  background-color: $link_color_focus;
+  color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0.25 * $base_spacing $base_spacing;
+}
