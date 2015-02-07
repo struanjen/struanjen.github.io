@@ -65,6 +65,11 @@
     <script src="../bower_components/lodash/dist/lodash.custom.js"></script>
     <script src="lib/picturefill.min.js"></script>
     <!-- endbuild -->
+
+    <!-- BEGIN TRACKJS -->
+    <script>window._trackJs = { token: '2579901cf630457798b73fbe6c6440e1' };</script>
+    <script src="//d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js"></script>
+    <!-- END TRACKJS -->
   </head>
   <body>
 
@@ -136,13 +141,6 @@
   </div>
 
   <main role="main">
-    @@include('./content/ceremony-reception.html')
-    @@include('./content/location.html')
-    @@include('./content/how-to-get-there.html')
-    @@include('./content/where-to-stay.html')
-    @@include('./content/gifts.html')
-    @@include('./content/things-to-do.html')
-
     <section id="rsvp">
       <header>
         <h2 class="section-title tk-le-havre">RSVP</h2>
@@ -152,12 +150,20 @@
         @@include('./content/rsvp.html')
       </div>
     </section>
+    @@include('./content/ceremony-reception.html')
+    @@include('./content/location.html')
+    @@include('./content/how-to-get-there.html')
+    @@include('./content/where-to-stay.html')
+    @@include('./content/gifts.html')
+    @@include('./content/things-to-do.html')
   </main>
       
   <!-- Footer -->
   <footer role="contentinfo">
     <p class="tk-penna">J &amp; S 2015</p>
   </footer>
+
+  @@include('./content/scroll-prompt.html')
 
   <script>
     window.WDNG = {};
@@ -168,6 +174,7 @@
   <script src="scripts/scrollQ.js"></script>
   <script src="scripts/navbar.js"></script>
   <script src="scripts/seeYouThere.js"></script>
+  <script src="scripts/scrollPrompt.js"></script>
   <script src="scripts/menu.js"></script>
   <script src="scripts/main.js"></script>
   <!-- endbuild -->

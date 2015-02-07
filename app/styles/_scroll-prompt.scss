@@ -1,0 +1,42 @@
+#scroll-prompt {
+  position: absolute;
+  bottom: $base_spacing;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2em 1.25em;
+  padding: 0;
+  margin: 0;
+
+  width: 3.5em;
+  height: 3.5em;
+  display: flex;
+
+  line-height: 1;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+
+  opacity: 0;
+
+  animation-name: fadein, bounce;
+  animation-duration: 1.5s;
+  animation-timing-function: linear, ease-in;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 4s, 0;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+
+  i {
+    font-size: 120%;
+    font-style: normal;
+    margin: auto;
+    display: block;
+
+    &::after {
+      content: 'v';
+      display: block;
+      text-align: center;
+      line-height: 0.6;
+    }
+  }
+}

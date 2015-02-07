@@ -26,8 +26,13 @@ WDNG.util = (function() {
     img.src = path;
   }
 
+  function suicide(el) {
+    el.parentNode.removeChild(el);
+  }
+
   return {
     getOffset: getOffset,
-    loadImage: loadImage
+    loadImage: loadImage,
+    suicide: suicide
   };
 }());

@@ -1,0 +1,10 @@
+@keyframes bounce {
+  0% { bottom: $base_spacing; }
+  100%  { bottom: -0.7 * $base_spacing; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes bounce {
+  0% { bottom: $base_spacing; }
+  100%  { bottom: -0.7 * $base_spacing; }
+}
